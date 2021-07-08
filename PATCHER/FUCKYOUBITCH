@@ -506,7 +506,6 @@ host = "https://xhannyaproject.000webhostapp.com"
 
 
 function btnLogin.onClick()
-main2()
   Waterdropanimation(btnLogin,20)
   vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
   vibrator.vibrate( long{100,20} ,-1)
@@ -523,9 +522,9 @@ main2()
       save.putString("username",username)
       save.putString("password",password)
       save.commit()
-      
+      proggresmod()
       Http.post(host.."/loginuser.php", "username=" ..username.. "&password=" ..password.. "&uuid="..uuid, nil, function(code,body,cookie,header)
-       
+        X.dismiss()
         if code == 200 then
           if body:match("XHANNYA") then
             EXPIREDLOGIN=string.match(tostring(body),";(.-);")
@@ -547,6 +546,7 @@ end
 
 
 function getid.onClick()
+main2()
   vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
   vibrator.vibrate( long{100,20} ,-1)
   import "android.provider.Settings$Secure"
