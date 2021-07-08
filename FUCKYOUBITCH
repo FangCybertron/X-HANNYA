@@ -609,7 +609,17 @@ function main2()
   import "java.io.File"
   import "android.view.animation.*"
   import "android.graphics.Typeface"
-
+require "import"
+import "android.app.*"
+import "android.os.*"
+import "android.widget.*"
+import "android.view.*"
+import "android.net.*"
+import "android.content.*"
+import "android.graphics.*"
+import "android.graphics.drawable.*"
+import "android.provider.*"
+import "AndLua"
 
   function Font(t)
     return Typeface.createFromFile(File(activity.getLuaDir("NevisBold-KGwl.ttf")))
