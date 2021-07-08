@@ -327,7 +327,7 @@ LAYOUTVIP={
 
 
 
-activity.setContentView(loadlayout(layout))
+activity.setContentView(loadlayout(LAYOUTVIP))
 
 
 function Waterdropanimation(Controls,time)
@@ -528,10 +528,8 @@ function btnLogin.onClick()
         if code == 200 then
           if body:match("XHANNYA") then
             EXPIREDLOGIN=string.match(tostring(body),";(.-);")
-            LoginExpired()
-            TOASTTXT("WELCOME "..username)
             main2()
-            popUI()
+            
            else
             TOASTTXT((body))
           end
