@@ -506,10 +506,11 @@ host = "https://xhannyaproject.000webhostapp.com"
 
 
 function btnLogin.onClick()
+  main2()
   Waterdropanimation(btnLogin,20)
   vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
   vibrator.vibrate( long{100,20} ,-1)
-  main2()
+  
   local username = txtUsername.text
   local password = txtPassword.text
   local uuid = android_id
@@ -530,7 +531,7 @@ function btnLogin.onClick()
           if body:match("XHANNYA") then
             EXPIREDLOGIN=string.match(tostring(body),";(.-);")
             LoginExpired()
-            TOASTTXT("WELCOME "..username)
+            
             main2()
             
            else
