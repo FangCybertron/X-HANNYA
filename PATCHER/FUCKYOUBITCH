@@ -509,6 +509,7 @@ function btnLogin.onClick()
   Waterdropanimation(btnLogin,20)
   vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
   vibrator.vibrate( long{100,20} ,-1)
+  main2()
   local username = txtUsername.text
   local password = txtPassword.text
   local uuid = android_id
