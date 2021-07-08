@@ -17,9 +17,9 @@ import "android.content.Context"
 
 
 
-if Build.VERSION.SDK_INT >= 26 then
-  activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS).setStatusBarColor(0xff182840);
-end
+
+
+
 
 activity.setTheme(android.R.style.Theme_DeviceDefault)
 activity.ActionBar.hide()
@@ -370,6 +370,7 @@ Alpha.setDuration(800)
 
 
 function proggresmod()
+main2()
   P_layout={
     LinearLayout;
     layout_height="fill";
