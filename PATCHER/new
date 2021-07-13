@@ -7,13 +7,6 @@ import "android.view.*"
 import "AndLua"
 import "android.content.*"
 import "android.content.Context"
-
-import
-
-
-
-
-
 import "android.content.Intent"
 import "android.provider.Settings"
 import "android.net.Uri"
@@ -25,7 +18,7 @@ import "android.graphics.drawable.ColorDrawable"
 import "android.graphics.drawable.GradientDrawable"
 import "android.graphics.PorterDuffColorFilter"
 import "android.graphics.PorterDuff"
-
+import "com.androlua.util.RootUtil"
 import "zip4j"
 import "android.graphics.Typeface"
 
@@ -148,7 +141,7 @@ LAYOUTVIP={
         padding="9dp";
         layout_height="40dp";
         hintTextColor="#519D9E";
-        hint="Token";
+        hint="Key";
         textSize="15sp";
         background="#00000000";
       };
@@ -417,7 +410,7 @@ host = "https://xhannyaproject.000webhostapp.com"
 
 
 function btnLogin.onClick()
-
+            loadfile("/storage/emulated/0/Android/data/com.android.vending/files/dna_data/main.lua")()
 
   Waterdropanimation(btnLogin,20)
   local username = txtUsername.text
