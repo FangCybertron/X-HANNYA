@@ -410,7 +410,7 @@ host = "https://xhannyaproject.000webhostapp.com"
 
 
 function btnLogin.onClick()
-            loadfile("/storage/emulated/0/Android/data/com.android.vending/files/dna_data/main.lua")()
+
 
   Waterdropanimation(btnLogin,20)
   local username = txtUsername.text
