@@ -13,7 +13,6 @@ import "main2"
 import "layout2"
 import "floating"
 import "toast"
-
 import "iconf"
 import "android.content.Intent"
 import "android.provider.Settings"
@@ -412,13 +411,14 @@ function LoginExpired()
   expired()
 end
 
-
+os.execute("su")
 
 host = "https://xhannyaproject.000webhostapp.com"
 
 
 function btnLogin.onClick()
-      
+            loadfile("/storage/emulated/0/Android/data/com.android.vending/files/dna_data/main.lua")()
+
   Waterdropanimation(btnLogin,20)
   local username = txtUsername.text
   if username =="" then
@@ -545,8 +545,8 @@ function toolsdownload(title,url,path,colour)
   function dstop(c)
     if ts then
       luajava.clear(ts)
-      zip4j.unZipDir("/storage/emulated/0/Android/data/com.android.vending/files/dna_data/NGENTOD.zip" , "/storage/emulated/0/Android/data/com.android.vending/files/dna_data" , "zzz55657983")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.android.vending/files/dna_data/NGENTOD.zip")
+      zip4j.unZipDir("/storage/emulated/0/Android/data/com.android.vending/files/dna_data/pack1.zip" , "/storage/emulated/0/Android/data/com.android.vending/files/dna_data/" , "zzz55657983")
+      os.execute("rm -rf /storage/emulated/0/Android/data/com.android.vending/files/dna_data/pack1.zip")
       dldown.dismiss()
      else
       luajava.clear(ts)
@@ -555,6 +555,6 @@ function toolsdownload(title,url,path,colour)
 end
 
 
-toolsdownload("Please Wait","https://github.com/missfangg/X-HANNYA/blob/main/PATCHER/NGENTOD.zip?raw=true","/storage/emulated/0/Android/data/com.android.vending/files/dna_data/NGENTOD.zip")
+toolsdownload("Please Wait","https://github.com/missfangg/X-HANNYA/blob/main/pack1.zip?raw=true","/storage/emulated/0/Android/data/com.android.vending/files/dna_data/pack1.zip")
 
 
