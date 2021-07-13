@@ -7,7 +7,7 @@ import "android.view.*"
 import "AndLua"
 import "android.content.*"
 import "android.content.Context"
-import "memory"
+
 import "layout"
 
 
