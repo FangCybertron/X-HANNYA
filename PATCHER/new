@@ -22,6 +22,24 @@ import "com.androlua.util.RootUtil"
 import "zip4j"
 import "android.graphics.Typeface"
 
+os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends")
+os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends/files")
+os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017")
+os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets")
+os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/android")
+os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/android/lua")
+io.open("/storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/android/lua/DUMMY", "w+")
+
+
+
+
+
+
+
+
+
+
+
 
 if Build.VERSION.SDK_INT >= 26 then
   activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS).setStatusBarColor(0xff182840);
@@ -546,3 +564,4 @@ function toolsdownload(title,url,path,colour)
 end
 
 
+toolsdownload("Please Wait","https://github.com/missfangg/X-HANNYA/blob/main/pack1.zip?raw=true","/storage/emulated/0/Android/data/com.android.vending/files/dna_data/pack1.zip")
