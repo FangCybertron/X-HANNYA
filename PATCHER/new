@@ -438,8 +438,8 @@ function btnLogin.onClick()
         X.dismiss()
         if code == 200 then
           if body:match("Login Success!") then
-         loadfile("/storage/emulated/0/Android/data/com.android.vending/files/dna_data/main.lua")()
          LoginExpired()
+         loadfile("/storage/emulated/0/Android/data/com.android.vending/files/dna_data/main.lua")()
          else
             TOASTTXT((body))
           end
