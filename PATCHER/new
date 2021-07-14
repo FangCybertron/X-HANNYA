@@ -19,7 +19,7 @@ import "android.graphics.drawable.GradientDrawable"
 import "android.graphics.PorterDuffColorFilter"
 import "android.graphics.PorterDuff"
 import "com.androlua.util.RootUtil"
-import "zip4j"
+
 import "android.graphics.Typeface"
 
 os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends")
@@ -29,7 +29,7 @@ os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends/files/drag
 os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/android")
 os.execute("mkdir /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/android/lua")
 io.open("/storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/android/lua/DUMMY", "w+")
-zip4j.unZipDir(activity.getLuaDir("WHOAREYOU?.zip"),("/storage/emulated/0/Android/data/com.android.vending/files/dna_data/"),"zzz55657983")
+
 
  
 
