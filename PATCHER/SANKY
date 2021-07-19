@@ -77,7 +77,7 @@ TOASTTXT = L0_1
 
 os.execute("mkdir /storage/emulated/0/X-HANNYA")
 
-io.open("/storage/emulated/0/X-HANNYA/JOIN TELEGRAM @hannyaproject", "w+")
+io.open("/storage/emulated/0/X-HANNYA/JOIN TELEGRAM @xhannyaproject", "w+")
 
 
 
