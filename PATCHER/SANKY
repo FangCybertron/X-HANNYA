@@ -416,13 +416,13 @@ function btnLogin.onClick()
       if code == 200 then
         if body:match("Login Success!") then
           
-          LoginExpired()
+          
 
 
   activity.newActivity("main2")
   activity.finish()
 
-         LoginExpired()
+         
 
          else
           TOASTTXT((body))
