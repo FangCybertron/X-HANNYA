@@ -7,7 +7,7 @@ import "AndLua"
 import "android.content.Context"
 import "android.content.Intent"
 import "android.net.*"
-
+Import "main2"
 
 
 if Build.VERSION.SDK_INT >= 15 then
