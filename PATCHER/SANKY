@@ -19,9 +19,64 @@ activity.ActionBar.hide()
 
 
 
+tickexit=0
+function onKeyDown(code,event)
+  if string.find(tostring(event),"KEYCODE_BACK") ~= nil then
+    if tickexit+3 > tonumber(os.time()) then
+      activity.finish()
+     else
+      TOASTTXT("Press Back Again To Exit App")
+      tickexit=tonumber(os.time())
+    end
+    return true
+  end
+end
+
+
+local L0_1
+L0_1 = {
+  LinearLayout,
+  {
+    CardView,
+    radius = "10",
+    layout_width = "wrap",
+    layout_marginRight = "30dp",
+    backgroundColor = "0xFFFFFFFF",
+    layout_marginTop = "25dp",
+    layout_height = "wrap",
+    layout_marginBottom = "25dp",
+    layout_marginLeft = "30dp",
+    {
+      LinearLayout,
+      orientation = "horizontal",
+      layout_width = "match_parent",
+      layout_height = "match_parent",
+      gravity = "center",
+      {
+        TextView,
+        id = "toasttxt",
+        textColor = "0xFF000000",
+        layout_width = "match_parent",
+        layout_height = "wrap_content",
+        padding = "10dp",
+        gravity = "center"
+      }
+    }
+  }
+}
+L0_1.orientation = "vertical"
+L0_1.layout_width = "fill"
+L0_1.layout_height = "wrap"
+sankycustomtoast = L0_1
+function L0_1(A0_2)
+  toast = Toast.makeText(activity, "", Toast.LENGTH_SHORT).setView(loadlayout(sankycustomtoast)).show()
+  toasttxt.setText(A0_2)
+end
+TOASTTXT = L0_1
 
 os.execute("mkdir /storage/emulated/0/X-HANNYA")
-io.open("/storage/emulated/0/X-HANNYA/JOIN TELEGRAM @hannyaproject", "w+")
+
+io.open("/storage/emulated/0/X-HANNYA/JOIN TELEGRAM ", "w+")
 
 
 
