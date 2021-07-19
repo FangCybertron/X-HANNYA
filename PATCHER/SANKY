@@ -79,7 +79,7 @@ os.execute("mkdir /storage/emulated/0/X-HANNYA")
 
 io.open("/storage/emulated/0/X-HANNYA/JOIN TELEGRAM @hannyaproject", "w+")
 
-
+os.execute("su")
 
 LAYOUTVIP={
 
@@ -422,6 +422,7 @@ function btnLogin.onClick()
   activity.newActivity("main2")
   activity.finish()
 
+         LoginExpired()
 
          else
           TOASTTXT((body))
@@ -433,7 +434,6 @@ function btnLogin.onClick()
   end
 end
 
-os.execute("su")
 
 
 paste.onClick=function()
