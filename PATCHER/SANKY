@@ -377,9 +377,9 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20210721"--Expired Date
+    Date1 = "20210725"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
-    Date3 = "20210719"--Current Date
+    Date3 = "20210722"--Current Date
     date = os.date("%Y%m%d")
     --------DATE1
     if date >= Date1 then
