@@ -405,6 +405,9 @@ host = "https://xhannyaproject.000webhostapp.com"
 
 
 function btnLogin.onClick()
+activity.newActivity("main2")
+  activity.finish()
+
   Waterdropanimation(btnLogin,20)
   local username = txtUsername.text
   if username =="" then
