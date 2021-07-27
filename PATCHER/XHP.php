@@ -110,40 +110,10 @@ TOASTTXT = L0_1
 
 
 
-function Checkpermissions(WRITE_EXTERNAL_STORAGE)
-  import "android.Manifest"
-  import "android.content.pm.PackageManager"
-  if (activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
-    return false
-   else
-    return true
-  end
+
+if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
+  intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
 end
-
-
-if not Checkpermissions (WRITE_EXTERNAL_STORAGE) then
-  dialog=AlertDialog.Builder(this)
-  .setTitle("  Application Need Permissions")
-  .setMessage(" ")
-  .setCancelable(false)
-  .setPositiveButton("ALLOW",
-  {onClick=function(v)
-      intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
-      activity.startActivityForResult(intent, 1234)
-    end})
-  .show()
- else
-end
-
-
-function onActivityResult(requestCode,resultCode, data)
-  if (requestCode == 1234) then
-    if not Checkpermissions (WRITE_EXTERNAL_STORAGE) then
-     else
-    end
-  end
-end
-
 
 
 os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
@@ -381,11 +351,11 @@ function Exec(one)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..two)
     Runtime.getRuntime().exec("su -c "..two)
-thread(Refresh) 
+    thread(Refresh)
    else
     os.execute("chmod 777 "..two)
     Runtime.getRuntime().exec(""..two)
-thread(Refresh) 
+    thread(Refresh)
   end
 end
 
@@ -396,11 +366,11 @@ function Exec2(CPP)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..dir)
     Runtime.getRuntime().exec("su -c "..dir)
-thread(Refresh) 
+    thread(Refresh)
    else
     os.execute("chmod 777 "..dir)
     Runtime.getRuntime().exec(""..dir)
-thread(Refresh) 
+    thread(Refresh)
   end
 end
 
