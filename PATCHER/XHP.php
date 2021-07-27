@@ -12,7 +12,7 @@ import "android.net.Uri"
 import "android.provider.Settings"
 import "com.androlua.util.RootUtil"
 import "android.graphics.Typeface"
-
+import "layout"
 
 
 local function isVpnUsed()
@@ -109,1461 +109,9 @@ end
 TOASTTXT = L0_1
 
 
-
-login={
-  LinearLayout;
-  orientation="vertical";
-  id="";
-  layout_height="fill";
-  gravity="center";
-  layout_width="fill";
-  backgroundColor="0x00000000";
-  {
-    CardView;
-    layout_width="fill";
-    backgroundColor="0x00000000";
-    layout_height="wrap";
-    cardElevation="0dp";
-    radius="10dp";
-    layout_gravity="center";
-    {
-      LinearLayout;
-      orientation="vertical";
-      layout_height="wrap";
-      layout_width="fill";
-      gravity="center";
-      layout_gravity="center";
-      {
-        FrameLayout,
-        layout_width="fill",
-        layout_height="fill",
-        backgroundColor="0xFFFFFFFF";
-
-        {
-          ScrollView;
-          layout_height="fill";
-          layout_width="fill";
-          {
-            LinearLayout;
-            orientation="vertical";
-            id="";
-            layout_height="fill";
-            gravity="center";
-            layout_width="fill";
-
-            {
-              CardView;
-              layout_width="fill";
-              backgroundColor="0x00000000";
-              layout_height="8%h";
-              cardElevation="0dp";
-              radius="0dp";
-              layout_gravity="center";
-              layout_margin="10dp";
-              {
-                LinearLayout;
-                layout_width="fill";
-                gravity="center";
-                layout_height="wrap";
-                layout_gravity="start";
-                orientation="vertical";
-                padding="5dp";
-                {
-                  TextView;
-                  layout_marginTop="-19";
-                  id="title";
-                  gravity="center";
-                  text="WELCOME";
-                  layout_width="fill";
-                  layout_height="wrap";
-                  textSize="18sp";
-                  layout_gravity="center";
-                  textColor="0xFF090707";
-                };
-              };
-
-              {
-                LinearLayout;
-                layout_width="fill";
-                gravity="right";
-                layout_height="wrap";
-                {
-                  ImageView;
-                  src="res/close.png";
-                  padding="2dp";
-                  layout_height="40dp";
-                  layout_width="40dp";
-                  layout_gravity="center";
-                  id="cancel";
-                  colorFilter="0xFFFF0000";
-                };
-              };
-            };
-
-            {
-              CardView;
-              layout_width="fill";
-              layout_gravity="center";
-              id="us";
-              layout_height="5%h";
-              backgroundColor="0x40000000";
-              radius="5dp";
-              cardElevation="0dp";
-              layout_margin="2dp";
-              layout_marginLeft="30dp";
-              layout_marginRight="30dp";
-              {
-                LinearLayout;
-                layout_width="fill";
-                gravity="center";
-                orientation="horizontal";
-                layout_height="wrap";
-                layout_gravity="center";
-                {
-                  EditText;
-                  TextColor="0xFF000000";
-                  id="txtUsername";
-                  layout_width="fill";
-                  padding="5dp";
-                  layout_height="33dp";
-                  hintTextColor="0xA0000000";
-                  hint="ENTER YOUR KEY";
-                  textSize="15sp";
-                  background="#00000000";
-                };
-              };
-            };
-
-
-            {
-              CheckBox;
-              id="rememberme";
-              text="Remember Me";
-              layout_gravity="left";
-              layout_marginLeft="25dp";
-              textSize="13";
-              textColor="0xFF090707";
-            };
-
-
-
-            {
-              LinearLayout;
-              orientation="horizontal";
-              layout_width="match_parent";
-              layout_height="80dp";
-              layout_marginLeft="30dp";
-              layout_marginRight="30dp";
-              {
-                CardView;
-                background="#FF414445";
-                layout_margin="10dp";
-                id="btnLogin";
-                layout_width="fill";
-                layout_height="35dp";
-                cardElevation="5dp";
-                radius="5dp";
-                layout_weight="1";
-                layout_gravity="center";
-                Visibility="visible";
-                {
-                  LinearLayout;
-                  backgroundColor="0x00000000";
-                  layout_width="match_parent";
-                  orientation="horizontal";
-                  layout_height="match_parent";
-                  gravity="center";
-                  layout_gravity="center";
-
-                  {
-                    ProgressBar;
-                    layout_gravity="center";
-                    visibility="gone";
-                    layout_width="15dp";
-                    style="?android:attr/progressBarStyleSmall";
-                    id="pstatus";
-                    layout_height="15dp";
-                    layout_marginLeft="0dp";
-                  };
-
-                  {
-                    TextView;
-                    id="loginY";
-                    gravity="center";
-                    text="LOGIN";
-                    padding="5dp";
-                    layout_width="fill";
-                    layout_height="30dp";
-                    textSize="15sp";
-                    layout_gravity="center";
-                    textColor="0xFFFFFFFF";
-                    background="#00000000";
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
-    };
-  };
-};
-function loginLY()
-
-
-
-
-  layout={
-    LinearLayout;
-    orientation="vertical";
-    gravity="center";
-    backgroundColor="0xFF000000";
-    layout_width="fill";
-    layout_height="fill";
-
-    {
-      LinearLayout;
-      layout_height="30dp";
-    };
-
-
-    {
-      LinearLayout;
-      orientation="vertical";
-      layout_width="fill";
-      layout_height="10%h";
-      gravity="center";
-
-      {
-        TextView;
-        text="XHP - PROJECT";
-        textSize="20sp";
-        textColor="0xFFFFFFFF";
-        id="";
-        gravity="center";
-      };
-      {
-        TextView;
-        id="";
-        layout_margin="1dp";
-        layout_width="fill";
-        text="App Version 1.1 | Beta Project";
-        layout_height="wrap";
-        textSize="15sp";
-        gravity="center";
-        textColor="0xFFFFFFFF";
-      };
-    };
-
-    {
-      LinearLayout;
-      layout_height="5dp";
-    };
-
-    {
-      CardView;
-      id="info";
-      layout_width="fill";
-      layout_height="wrap";
-      backgroundColor="0xFF202428";
-      layout_gravity="center";
-      layout_marginLeft="10dp";
-      layout_marginRight="10dp";
-      layout_margin="5dp";
-      radius=20;
-      cardElevation="5dp";
-      {
-        LinearLayout;
-        layout_width="match_parent";
-        backgroundColor="0x00000000";
-        orientation="vertical";
-        layout_height="wrap";
-        gravity="center";
-        padding="5dp";
-        {
-          LinearLayout;
-          layout_width="match_parent";
-          layout_height="1";
-        };
-
-
-        {
-          LinearLayout;
-          layout_width="match_parent";
-          backgroundColor="0x00000000";
-          orientation="horizontal";
-          layout_height="wrap";
-          gravity="left";
-          layout_marginLeft="5dp";
-          layout_margin="3dp";
-          {
-            ImageView;
-            colorFilter="0xFFFFFFFF";
-            src="res/expired.png";
-            layout_gravity="center";
-            layout_width="20dp";
-            layout_height="20dp";
-            padding="1dp";
-          };
-          {
-            TextView;
-            text=" EXPIRED";
-            layout_width="25%w";
-            id="";
-            gravity="left|center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="  : ";
-            layout_width="wrap";
-            layout_height="wrap";
-            textSize="12sp";
-            layout_gravity="center";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="";
-            layout_width="wrap";
-            id="author";
-            layout_marginLeft="5dp";
-            gravity="center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-        };
-        {
-          LinearLayout;
-          layout_width="match_parent";
-          backgroundColor="0x00000000";
-          orientation="horizontal";
-          layout_height="wrap";
-          gravity="left";
-          layout_marginLeft="5dp";
-          layout_margin="3dp";
-          {
-            ImageView;
-            colorFilter="0xFFFFFFFF";
-            src="res/device.png";
-            layout_gravity="center";
-            layout_width="20dp";
-            layout_height="20dp";
-            padding="1dp";
-          };
-          {
-            TextView;
-            text=" DEVICE";
-            layout_width="25%w";
-            id="";
-            gravity="left|center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="  : ";
-            layout_width="wrap";
-            layout_height="wrap";
-            textSize="12sp";
-            layout_gravity="center";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="";
-            layout_width="wrap";
-            id="model";
-            layout_marginLeft="5dp";
-            gravity="center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-        };
-
-        {
-          LinearLayout;
-          layout_width="match_parent";
-          backgroundColor="0x00000000";
-          orientation="horizontal";
-          layout_height="wrap";
-          gravity="left";
-          layout_marginLeft="5dp";
-          layout_margin="3dp";
-          {
-            ImageView;
-            colorFilter="0xFFFFFFFF";
-            src="res/android.png";
-            layout_gravity="center";
-            layout_width="20dp";
-            layout_height="20dp";
-            padding="1dp";
-          };
-          {
-            TextView;
-            text=" ANDROID";
-            layout_width="25%w";
-            id="";
-            gravity="left|center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="  : ";
-            layout_width="wrap";
-            layout_height="wrap";
-            textSize="12sp";
-            layout_gravity="center";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="";
-            layout_width="wrap";
-            id="android";
-            layout_marginLeft="5dp";
-            gravity="center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-        };
-
-        {
-          LinearLayout;
-          layout_width="match_parent";
-          backgroundColor="0x00000000";
-          orientation="horizontal";
-          layout_height="wrap";
-          gravity="left";
-          layout_marginLeft="5dp";
-          layout_margin="3dp";
-          {
-            ImageView;
-            colorFilter="0xFFFFFFFF";
-            src="res/sdk.png";
-            layout_gravity="center";
-            layout_width="20dp";
-            layout_height="20dp";
-            padding="1dp";
-          };
-          {
-            TextView;
-            text=" SDK";
-            layout_width="25%w";
-            id="";
-            gravity="left|center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="  : ";
-            layout_width="wrap";
-            layout_height="wrap";
-            textSize="12sp";
-            layout_gravity="center";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="";
-            layout_width="wrap";
-            id="sdk";
-            layout_marginLeft="5dp";
-            gravity="center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-        };
-
-      };
-    };
-
-    {
-      LinearLayout;
-      orientation="horizontal";
-      layout_width="match_parent";
-      layout_height="80dp";
-      layout_marginLeft="5dp";
-      layout_marginRight="5dp";
-      {
-        CardView;
-        backgroundColor="0xFFFF0000";
-        layout_margin="5dp";
-        layout_height="match_parent";
-        id="start";
-        CardElevation="3dp";
-        layout_width="60dp";
-        radius=10;
-        layout_weight="1";
-        layout_gravity="center";
-        {
-          LinearLayout;
-          backgroundColor="0x00000000";
-          layout_width="match_parent";
-          orientation="horizontal";
-          layout_height="match_parent";
-          gravity="center";
-          layout_gravity="center";
-          {
-            ImageView;
-            colorFilter="0xFFFFFFFF";
-            src="res/start.png";
-            layout_margin="5dp";
-            layout_gravity="center";
-            layout_width="25dp";
-            layout_height="25dp";
-            id="startid";
-          };
-          {
-            TextView;
-            textColor="0xFFFFFFFF";
-            layout_gravity="center";
-            textSize="15sp";
-            text="START CHEAT";
-          };
-        };
-      };
-      {
-        CardView;
-        backgroundColor="0xFFFF4C4C";
-        layout_margin="5dp";
-        layout_height="match_parent";
-        id="stop";
-        CardElevation="3dp";
-        layout_width="60dp";
-        radius=10;
-        layout_weight="1";
-        layout_gravity="center";
-        {
-          LinearLayout;
-          backgroundColor="0x00000000";
-          layout_width="match_parent";
-          orientation="horizontal";
-          layout_height="match_parent";
-          gravity="center";
-          layout_gravity="center";
-          {
-            ImageView;
-            colorFilter="0xFFFFFFFF";
-            src="res/stop.png";
-            layout_margin="5dp";
-            layout_gravity="center";
-            layout_width="25dp";
-            layout_height="25dp";
-            id="stopid";
-          };
-          {
-            TextView;
-            textColor="0xFFFFFFFF";
-            layout_gravity="center";
-            textSize="15sp";
-            text="STOP CHEAT";
-          };
-        };
-      };
-    };
-    {
-      LinearLayout;
-      layout_height="0dp";
-    };
-    {
-      CardView;
-      id="play";
-      layout_width="fill";
-      layout_height="50dp";
-      backgroundColor="0xFF008EFF";
-      layout_marginLeft="10dp";
-      layout_marginRight="10dp";
-      radius="3dp";
-      cardElevation="0dp";
-      {
-        LinearLayout;
-        layout_width="match_parent";
-        backgroundColor="0x00000000";
-        orientation="horizontal";
-        layout_height="wrap";
-        gravity="center";
-        layout_gravity="center";
-        id="playid";
-        {
-          TextView;
-          text="STARTGAME";
-          layout_width="wrap";
-          gravity="center";
-          layout_gravity="center";
-          layout_height="wrap";
-          textSize="20sp";
-          textColor="0xFFFFFFFF";
-        };
-      };
-    };
-
-
-    {
-      LinearLayout;
-      layout_height="10dp";
-    };
-
-    {
-      LinearLayout;
-      layout_width="fill";
-      layout_height="wrap";
-      Visibility="visible";
-      layout_gravity="center";
-      backgroundColor="0x00000000";
-      id="telegram";
-      {
-        LinearLayout;
-        layout_width="wrap";
-        gravity="center";
-        orientation="horizontal";
-        layout_height="wrap";
-        layout_gravity="center";
-        {
-          ImageView;
-          src="res/telegram.png";
-          padding="10dp";
-          layout_height="40dp";
-          layout_width="40dp";
-          colorFilter="0xFFFFFFFF";
-          layout_gravity="center";
-        };
-        {
-          TextView;
-          TextColor="0xFFFFFFFF";
-          textSize="15sp";
-          text="TELEGRAM";
-          id="";
-          layout_width="70%w";
-          layout_height="40dp";
-          gravity="center|left";
-          layout_gravity="center";
-          padding="5dp";
-        };
-        {
-          ImageView;
-          src="res/arrow.png";
-          padding="10dp";
-          layout_height="32dp";
-          layout_width="32dp";
-          colorFilter="0xFFFFFFFF";
-          layout_gravity="center";
-        };
-      };
-    };
-
-
-    {
-      LinearLayout;
-      layout_width="fill";
-      layout_height="wrap";
-      Visibility="visible";
-      layout_gravity="center";
-      backgroundColor="0x00000000";
-      id="youtube";
-      {
-        LinearLayout;
-        layout_width="wrap";
-        gravity="center";
-        orientation="horizontal";
-        layout_height="wrap";
-        layout_gravity="center";
-        {
-          ImageView;
-          src="res/youtube.png";
-          padding="10dp";
-          layout_height="40dp";
-          layout_width="40dp";
-          colorFilter="0xFFFFFFFF";
-          layout_gravity="center";
-        };
-        {
-          TextView;
-          TextColor="0xFFFFFFFF";
-          textSize="15sp";
-          text="YOUTUBE";
-          id="";
-          layout_width="70%w";
-          layout_height="40dp";
-          gravity="center|left";
-          layout_gravity="center";
-          padding="5dp";
-        };
-        {
-          ImageView;
-          src="res/arrow.png";
-          padding="10dp";
-          layout_height="32dp";
-          layout_width="32dp";
-          colorFilter="0xFFFFFFFF";
-          layout_gravity="center";
-        };
-      };
-    };
-
-
-    {
-      LinearLayout;
-      layout_width="fill";
-      layout_height="wrap";
-      Visibility="visible";
-      layout_gravity="center";
-      backgroundColor="0x00000000";
-      id="exit";
-      {
-        LinearLayout;
-        layout_width="wrap";
-        gravity="center";
-        orientation="horizontal";
-        layout_height="wrap";
-        layout_gravity="center";
-        {
-          ImageView;
-          src="res/exit.png";
-          padding="10dp";
-          layout_height="40dp";
-          layout_width="40dp";
-          colorFilter="0xFFFFFFFF";
-          layout_gravity="center";
-        };
-        {
-          TextView;
-          TextColor="0xFFFFFFFF";
-          textSize="15sp";
-          text="EXIT";
-          id="";
-          layout_width="70%w";
-          layout_height="40dp";
-          gravity="center|left";
-          layout_gravity="center";
-          padding="5dp";
-        };
-      };
-    };
-
-
-
-
-    {
-      LinearLayout;
-      layout_gravity="center";
-      layout_width="fill";
-      Orientation="vertical";
-      gravity="center|bottom";
-      layout_height="fill";
-    };
-  };
-
-
-  floating={
-    LinearLayout,
-    layout_width="fill",
-    layout_height="fill",
-    background="transparent",
-    orientation="vertical";
-    {
-      CardView,
-      radius=20;
-      layout_width="fill",
-      layout_height="wrap",
-      backgroundColor="0xFFFF0000",
-      CardElevation="0dp",
-      layout_gravity="center";
-      id="menufloating";
-      {
-        LinearLayout;
-        orientation="vertical";
-        layout_width="fill",
-        layout_height="fill",
-        gravity="center";
-        {
-          CardView,
-          radius=0;
-          layout_width="fill",
-          layout_height="30dp",
-          backgroundColor="0xFFFF0000",
-          CardElevation="0dp",
-          layout_gravity="center";
-          id="fl";
-          {
-            LinearLayout;
-            layout_height="wrap";
-            layout_width="fill";
-            orientation="horizontal";
-            layout_gravity="center";
-            padding="5dp";
-            {
-              LinearLayout;
-              layout_height="wrap";
-              layout_width="fill";
-              orientation="vertical";
-              layout_gravity="center";
-              {
-                LinearLayout;
-                layout_height="wrap";
-                layout_width="fill";
-                orientation="vertical";
-                layout_gravity="center";
-                {
-                  TextView,
-                  typeface=Typeface.DEFAULT_BOLD,
-                  layout_width="wrap",
-                  layout_height="wrap",
-                  layout_gravity="center",
-                  textColor="0xFFFFFFFF",
-                  textSize="16sp",
-                  Gravity="center",
-                  layout_gravity="center";
-                  text="XHP - PROJECT",
-                  id="t2",
-                },
-              };
-            };
-          };
-
-          {
-            LinearLayout;
-            orientation="horizontal";
-            layout_height="fill";
-            layout_width="fill";
-            gravity="right";
-            background="transparent",
-
-            {
-              ImageView;
-              layout_width="35dp";
-              layout_height="35dp";
-              src="res/close.png";
-              colorFilter="0xFFFFFFFF";
-              layout_gravity="center";
-              padding="2dp";
-              id="t1";
-            };
-          };
-        };
-
-        {
-          CardView,
-          radius=20;
-          layout_width="fill",
-          layout_height="wrap",
-          backgroundColor="0xFF202125",
-          CardElevation="0dp",
-          layout_gravity="center";
-          layout_margin="5dp";
-          id="";
-          {
-            LinearLayout;
-            orientation="vertical";
-            layout_width="fill",
-            layout_height="fill",
-            gravity="center";
-            {
-              LinearLayout;
-              orientation="vertical";
-              padding="5";
-              {
-                ScrollView;
-                layout_width="fill_parent";
-                layout_height="fill",
-                layout_gravity="center_horizontal";
-                id="";
-                {
-                  LinearLayout,
-                  id="win_mainviewX",
-                  layout_width="fill",
-                  layout_height="fill";
-                  backgroundColor="0x00000000";
-                  gravity="center";
-                  Visibility="visible";
-                  padding="3dp";
-                  {
-                    LinearLayout;
-                    orientation="vertical";
-                    {
-                      CardView,
-                      id="win_mainview",
-                      layout_width="75%w",
-                      layout_height="fill";
-                      backgroundColor="0x00000000",
-                      CardElevation="0dp",
-                      layout_gravity="center";
-                      radius="0";
-                      {
-                        LinearLayout;
-                        orientation="vertical";
-                        layout_width="fill_parent";
-                        background="transparent",
-                        {
-                          LinearLayout;
-                          layout_width="fill_parent";
-                          background="transparent";
-                        };
-
-
-                        {
-                          LinearLayout;
-                          layout_width="fill";
-                          layout_height="fill",
-                          orientation="vertical";
-                          id="menu1";
-                          visibility="visible";
-                          {
-                            ScrollView;
-                            layout_width="fill";
-                            layout_height="fill",
-                            layout_gravity="center_horizontal";
-                            id="";
-                            {
-                              LinearLayout;
-                              layout_height="fill";
-                              layout_width="fill";
-                              orientation="vertical";
-                              {
-                                LinearLayout;
-                                orientation="vertical";
-                                layout_height="fill";
-                                layout_width="fill";
-                              };
-
-                              {
-                                Switch;
-                                text="• ANTIBAN [ LOBBY ]";
-                                textColor="0xFFFFFFFF";
-                                id="antiban";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-                              {
-                                Switch;
-                                text="• ESP LOCK HERO";
-                                textColor="0xFFFFFFFF";
-                                id="esplock";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-                              {
-                                Switch;
-                                text="• RADAR MAP";
-                                textColor="0xFFFFFFFF";
-                                id="radarmap";
-                                textSize="12sp";
-                                layout_gravity="center";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• VISIBLE IN GRASS";
-                                textColor="0xFFFFFFFF";
-                                id="fixgrass";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• REMOVE GRASS";
-                                textColor="0xFFFFFFFF";
-                                id="removegrass";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• HIDE NICKNAME";
-                                textColor="0xFFFFFFFF";
-                                id="hidename";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• MAX EMBLEMS";
-                                textColor="0xFFFFFFFF";
-                                id="emblem";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-                              {
-                                Switch;
-                                text="• QUICK CHAT NO COOLDOWN";
-                                textColor="0xFFFFFFFF";
-                                id="spamchat";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout,
-                                layout_height = "0.4%h",
-                                layout_width = "fill"
-                              },
-                              {
-                                LinearLayout,
-                                layout_width = "fill",
-                                layout_height = "wrap",
-                                id = " title1 ";
-                                gravity = "center_horizontal",
-                                backgroundColor = "0xFFFF0000",
-                                {
-                                  TextView;
-                                  text="CAMERA VIEW";
-                                  textColor="0xFFFFFFFF";
-                                  id="";
-                                  layout_gravity="center";
-                                  textSize="16sp";
-                                  layout_width="wrap";
-                                  layout_height="wrap";
-                                }
-                              };
-                              {
-                                LinearLayout,
-                                layout_height = "0.5%h",
-                                layout_width = "fill"
-                              },
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-
-                              {
-                                TextView;
-                                id="text";
-                                layout_width="wrap_content";
-                                layout_height="wrap_content";
-                                text="• VERTICAL 0 X";
-                                textColor="0xFFFFFFFF";
-                                textSize="12sp";
-                              };
-                              {
-                                CardView;
-                                layout_width = "fill",
-                                radius="20";
-                                layout_height = "wrap",
-                                layout_gravity = "center",
-                                backgroundColor = "0xFF202428",
-                                {
-                                  SeekBar;
-                                  id="droneviewtop";
-                                  layout_width="match_parent";
-                                  layout_height="wrap_content";
-                                  max="10";
-                                  progress="0";
-                                };
-                              };
-
-
-
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="10dp";
-                              };
-
-                              {
-                                TextView;
-                                id="text2";
-                                layout_width="wrap_content";
-                                layout_height="wrap_content";
-                                text="• HORIZONTAL 0 X";
-                                textColor="0xFFFFFFFF";
-                                textSize="12sp";
-                              };
-
-                              {
-                                CardView;
-                                layout_width = "fill",
-                                radius="20";
-                                layout_height = "wrap",
-                                layout_gravity = "center",
-                                backgroundColor = "0xFF202428",
-
-                                {
-                                  SeekBar;
-                                  id="droneviewside";
-                                  layout_width="match_parent";
-                                  layout_height="wrap_content";
-                                  max="10";
-                                  progress="0";
-                                };
-                              };
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-
-                              {
-                                LinearLayout,
-                                layout_height = "0.5%h",
-                                layout_width = "fill"
-                              },
-
-                              {
-                                LinearLayout,
-                                layout_height = "0.4%h",
-                                layout_width = "fill"
-                              },
-                              {
-                                LinearLayout,
-                                layout_width = "fill",
-                                layout_height = "wrap",
-                                id = " title1 ";
-                                gravity = "center_horizontal",
-                                backgroundColor = "0xFFFF0000",
-                                {
-                                  TextView;
-                                  text="CUSTOM";
-                                  textColor="0xFFFFFFFF";
-                                  id="";
-                                  layout_gravity="center";
-                                  textSize="16sp";
-                                  layout_width="wrap";
-                                  layout_height="wrap";
-                                }
-                              };
-                              {
-                                LinearLayout,
-                                layout_height = "0.5%h",
-                                layout_width = "fill"
-                              },
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• UNLOCK ALL SKIN";
-                                textColor="0xFFFFFFFF";
-                                id="unlockskin";
-                                textSize="12sp";
-                                layout_gravity="center";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• ATTACK SPEED";
-                                textColor="0xFFFFFFFF";
-                                id="attackspeed";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• WALLHACK";
-                                textColor="0xFFFFFFFF";
-                                id="wallhack";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• NO SPAWN";
-                                textColor="0xFFFFFFFF";
-                                id="autospawn";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-                              {
-                                Switch;
-                                text="• SPELL & SKILL NO COOLDOWN";
-                                textColor="0xFFFFFFFF";
-                                id="skillnocd";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout,
-                                layout_height = "0.5%h",
-                                layout_width = "fill"
-
-                              },
-                              {
-                                ToggleButton,
-                                textSize="11sp";
-                                layout_grafity="center";
-                                text = "UNLOCK HERO",
-                                layout_height = "32dp",
-                                textOn = "UNLOCK HERO",
-                                id = "hero",
-                                textColor = "0xFFFFFFFF",
-                                textOff = "UNLOCK HERO",
-                                layout_width = "fill"
-                              };
-                              {
-                                LinearLayout,
-                                layout_height = "0.5%h",
-                                layout_width = "fill"
-                              },
-                              {
-                                ToggleButton,
-                                textSize="11sp";
-                                layout_grafity="center";
-                                text = "CLEAR CACHE & LOGS",
-                                layout_height = "32dp",
-                                textOn = "CLEAR CACHE & LOGS",
-                                id = "logs",
-                                textColor = "0xFFFFFFFF",
-                                textOff = "CLEAR CACHE & LOGS",
-                                layout_width = "fill"
-                              };
-                            };
-                          };
-                        };
-                      };
-                    };
-                  };
-                };
-              };
-            };
-          };
-        };
-      };
-    };
-  };
-
-
-icon={
-  LinearLayout;
-  layout_height="fill";
-  layout_width="fill";
-  id="iconfloating";
-  {
-    CardView,
-    layout_width="fill",
-    layout_height="fill";
-    backgroundColor="0x00FFFFFF";
-    CardElevation="5dp",
-    radius="50";
-    id="iconf";
-    {
-      ImageView;
-      layout_height="45dp";
-      layout_width="45dp";
-      src="res/iconf.png";
-      id="Win_minWindow";
-      padding="3dp";
-      colorFilter="#090707";
-    };
-  };
-};
-
-
-
-
-  Logindialog = AlertDialogBuilder(this);
-  Logindialog.setView(loadlayout(login))
-  Logindialog.setCancelable(false)
-  dialogX=Logindialog.show()
-  import "android.graphics.drawable.GradientDrawable"
-  local radiu=10
-  dialogX.getWindow().setBackgroundDrawable(GradientDrawable().setCornerRadii({radiu,radiu,radiu,radiu,radiu,radiu,radiu,radiu}).setColor(0x00000000))
-
-
-  function Waterdropanimation(Controls,time)
-    import "android.animation.ObjectAnimator"
-    ObjectAnimator().ofFloat(Controls,"scaleX",{1,.8,1.3,.9,1}).setDuration(time).start()
-    ObjectAnimator().ofFloat(Controls,"scaleY",{1,.8,1.3,.9,1}).setDuration(time).start()
-  end
-
-  pstatus.IndeterminateDrawable.setColorFilter(PorterDuffColorFilter(0xFFFFFFFF,PorterDuff.Mode.SRC_ATOP))
-
-  local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
-  username = pref.getString("username", "")
-  txtUsername.setTypeface(Typeface.MONOSPACE)
-
-  remember = pref.getString("rememberme", "")
-  if remember == "true" then
-    txtUsername.setText(username)
-    rememberme.setChecked(true)
-   else
-    rememberme.setChecked(false)
-  end
-
-
-  function rememberme.OnCheckedChangeListener()
-    if rememberme.checked then
-      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
-      local save = pref.edit()
-      save.putString("rememberme", "true")
-      save.commit()
-     else
-      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
-      local save = pref.edit()
-      save.putString("rememberme", "false")
-      save.commit()
-    end
-  end
-
-
-  function btnLogin.onClick()
-    Waterdropanimation(btnLogin,20)
-    local username = txtUsername.Text
-    if username =="" then
-      TOASTTXT("INPUT KEY")
-     else
-      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
-      local save = pref.edit()
-      save.putString("username",username)
-      save.commit()
-      pstatus.setVisibility(LinearLayout.VISIBLE)
-      loginY.setVisibility(LinearLayout.GONE)
-      urla="https://pastebin.com/raw/9WxAZsHK"
-      Http.get(urla,nil,function(code,content)
-        AP=content:match("【S】(.-)【S】")
-        if AP== txtUsername.Text then
-          -------------------------------------------------
-          Logindialog.dismiss();
-          -------------------------------------------------
-         else
-          -------------------------------------------------
-          TOASTTXT("INVALID KEY")
-          pstatus.setVisibility(LinearLayout.GONE)
-          loginY.setVisibility(LinearLayout.VISIBLE)
-          -------------------------------------------------
-        end
-      end)
-    end
-  end
-
-
-  function cancel.onClick()
-    Waterdropanimation(cancel,20)
-    activity.finish()
-  end
-end
-loginLY()
-
-
 if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
   intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
 end
-
 
 os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
 io.open("/storage/emulated/0/XHP-PROJECT/JOIN TELEGRAM @xhp_project", "w+")
@@ -1595,8 +143,8 @@ function CircleButton(view,InsideColor,radiu,InsideColor1)
 end
 
 function run()
-  dd = tonumber("29") - tonumber(os.date("%d"))
-  hh=tonumber("9") - tonumber(os.date("%H"))
+  dd = tonumber("27") - tonumber(os.date("%d"))
+  hh=tonumber("21") - tonumber(os.date("%H"))
   mm=tonumber("60") - tonumber(os.date("%M"))
   day= tostring(dd)
   hour= tostring(hh)
@@ -1625,7 +173,7 @@ sdk.setText(""..Build.VERSION.SDK)
 
 
 
-
+import "floating"
 LayoutVIP=activity.getSystemService(Context.WINDOW_SERVICE)
 HasFocus=false
 A3params =WindowManager.LayoutParams()
@@ -1643,7 +191,7 @@ A3params.height = WindowManager.LayoutParams.WRAP_CONTENT
 mainWindow = loadlayout(floating)
 isMax=false
 
-
+import "icon"
 LayoutVIP1=activity.getSystemService(Context.WINDOW_SERVICE)
 HasFocus=false
 A3params1 =WindowManager.LayoutParams()
@@ -1724,6 +272,8 @@ end
 
 function start.onClick()
   Waterdropanimation(start,20)
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   if isMax==false then
     isMax=true
     LayoutVIP1.addView(minWindow,A3params1)
@@ -1734,6 +284,8 @@ end
 
 function stop.onClick()
   Waterdropanimation(stop,20)
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   if isMax==true && OpenM==true then
     isMax=false OpenM=false
     LayoutVIP.removeView(mainWindow)
@@ -1751,6 +303,8 @@ end
 
 function playid.onClick()
   if pcall(function()
+      vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+      vibrator.vibrate( long{20,10} ,-5)
       activity.getPackageManager().getPackageInfo("com.mobile.legends", 0)
     end) then
     this.startActivity(activity.getPackageManager().getLaunchIntentForPackage("com.mobile.legends"))
@@ -1763,16 +317,22 @@ end
 
 
 telegram.onClick=function()
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   url = "http://t.me/xhp_project"
   activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 end
 
 youtube.onClick=function()
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   url = "https://youtube.com/channel/UCdLqzSTn88RBFeeCEH8D1RA"
   activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 end
 
 exit.onClick=function()
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   activity.finish()
 end
 
@@ -1795,31 +355,31 @@ CircleButton(droneviewside,0xFF202428,20,0xFFFFFFFF)
 droneviewtop.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
 droneviewside.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
 
+
 function Exec(one)
   local two=activity.getApplicationInfo().nativeLibraryDir.."/"..(one)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..two)
     Runtime.getRuntime().exec("su -c "..two)
-    thread(Refresh)
+    Thread.sleep("5")
    else
     os.execute("chmod 777 "..two)
     Runtime.getRuntime().exec(""..two)
-    thread(Refresh)
+    Thread.sleep("5")
   end
 end
 
 
-
-function Exec2(CPP)
-  local dir=activity.getLuaDir(CPP)
+function Exec1(cpp)
+  local dir=activity.getLuaDir(cpp)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..dir)
     Runtime.getRuntime().exec("su -c "..dir)
-    thread(Refresh)
+    Thread.sleep("5")
    else
     os.execute("chmod 777 "..dir)
     Runtime.getRuntime().exec(""..dir)
-    thread(Refresh)
+    Thread.sleep("5")
   end
 end
 
@@ -1831,188 +391,180 @@ hero = PopupMenu(activity, hero)
 menu = hero.Menu
 
 menu.add(" • Aldous                                            ").onMenuItemClick = function()
-  Exec2("CPP/Aldous")
+  Exec1("CPP/Aldous")
 end
 menu.add(" • Alucard                                   ").onMenuItemClick = function()
-  Exec2("CPP/Alucard")
+  Exec1("CPP/Alucard")
 end
 menu.add(" • Atlas                                     ").onMenuItemClick = function()
-  Exec2("CPP/Atlas")
+  Exec1("CPP/Atlas")
 end
 menu.add(" • Barats                                     ").onMenuItemClick = function()
-  Exec2("CPP/Barats")
+  Exec1("CPP/Barats")
 end
 menu.add(" • Beatrix                                       ").onMenuItemClick = function()
-  Exec2("CPP/Beatrix")
+  Exec1("CPP/Beatrix")
 end
 menu.add(" • Benedetta                                  ").onMenuItemClick = function()
-  Exec2("CPP/Benedetta")
+  Exec1("CPP/Benedetta")
 end
 menu.add(" • Brody                                       ").onMenuItemClick = function()
-  Exec2("CPP/Brody")
+  Exec1("CPP/Brody")
 end
 menu.add(" • Bruno                                      ").onMenuItemClick = function()
-  Exec2("CPP/Bruno")
+  Exec1("CPP/Bruno")
 end
 menu.add(" • Chou                                        ").onMenuItemClick = function()
-  Exec2("CPP/Chou")
+  Exec1("CPP/Chou")
 end
 menu.add(" • Claude                                     ").onMenuItemClick = function()
-  Exec2("CPP/Claude")
+  Exec1("CPP/Claude")
 end
 menu.add(" • Clint                                      ").onMenuItemClick = function()
-  Exec2("CPP/Clint")
+  Exec1("CPP/Clint")
 end
 menu.add(" • Dyroth                                    ").onMenuItemClick = function()
-  Exec2("CPP/Dyroth")
+  Exec1("CPP/Dyroth")
 end
 menu.add(" • Esmeralda                                   ").onMenuItemClick = function()
-  Exec2("CPP/Esmeralda")
+  Exec1("CPP/Esmeralda")
 end
 menu.add(" • Fanny                                   ").onMenuItemClick = function()
-  Exec2("CPP/Fanny")
+  Exec1("CPP/Fanny")
 end
 menu.add(" • Freya                                   ").onMenuItemClick = function()
-  Exec2("CPP/Freya")
+  Exec1("CPP/Freya")
 end
 menu.add(" • Granger                                   ").onMenuItemClick = function()
-  Exec2("CPP/Granger")
+  Exec1("CPP/Granger")
 end
 menu.add(" • Guinevere                                   ").onMenuItemClick = function()
-  Exec2("CPP/Guinevere")
+  Exec1("CPP/Guinevere")
 end
 menu.add(" • Gusion                                   ").onMenuItemClick = function()
-  Exec2("CPP/Gusion")
+  Exec1("CPP/Gusion")
 end
 menu.add(" • Hanabi                                   ").onMenuItemClick = function()
-  Exec2("CPP/Hanabi")
+  Exec1("CPP/Hanabi")
 end
 menu.add(" • Hanzo                                   ").onMenuItemClick = function()
-  Exec2("CPP/Hanzo")
+  Exec1("CPP/Hanzo")
 end
 menu.add(" • Harith                                  ").onMenuItemClick = function()
-  Exec2("CPP/Harith")
+  Exec1("CPP/Harith")
 end
 menu.add(" • Harley                                  ").onMenuItemClick = function()
-  Exec2("CPP/Harley")
+  Exec1("CPP/Harley")
 end
 menu.add(" • Hayabusa                              ").onMenuItemClick = function()
-  Exec2("CPP/Hayabusa")
+  Exec1("CPP/Hayabusa")
 end
 menu.add(" • Helcurt                                 ").onMenuItemClick = function()
-  Exec2("CPP/Helcurt")
+  Exec1("CPP/Helcurt")
 end
 menu.add(" • Jawhead                               ").onMenuItemClick = function()
-  Exec2("CPP/Jawhead")
+  Exec1("CPP/Jawhead")
 end
 menu.add(" • Kadita                              ").onMenuItemClick = function()
-  Exec2("CPP/Kadita")
+  Exec1("CPP/Kadita")
 end
 menu.add(" • Kagura                             ").onMenuItemClick = function()
-  Exec2("CPP/Kagura")
+  Exec1("CPP/Kagura")
 end
 menu.add(" • Karina                            ").onMenuItemClick = function()
-  Exec2("CPP/Karina")
+  Exec1("CPP/Karina")
 end
 menu.add(" • Karrie                            ").onMenuItemClick = function()
-  Exec2("CPP/Karrie")
+  Exec1("CPP/Karrie")
 end
 menu.add(" • Khaleed                            ").onMenuItemClick = function()
-  Exec2("CPP/Khaleed")
+  Exec1("CPP/Khaleed")
 end
 menu.add(" • Kimmy                            ").onMenuItemClick = function()
-  Exec2("CPP/Kimmy")
+  Exec1("CPP/Kimmy")
 end
 menu.add(" • Kufra                           ").onMenuItemClick = function()
-  Exec2("CPP/Kufra")
+  Exec1("CPP/Kufra")
 end
 menu.add(" • Lancelot                      ").onMenuItemClick = function()
-  Exec2("CPP/Lancelot")
+  Exec1("CPP/Lancelot")
 end
 menu.add(" • Lapu Lapu                     ").onMenuItemClick = function()
-  Exec2("CPP/Lapu")
+  Exec1("CPP/Lapu")
 end
 menu.add(" • Leomord                           ").onMenuItemClick = function()
-  Exec2("CPP/Leomord")
+  Exec1("CPP/Leomord")
 end
 menu.add(" • Lesley                          ").onMenuItemClick = function()
-  Exec2("CPP/Lesley")
+  Exec1("CPP/Lesley")
 end
 menu.add(" • Ling                          ").onMenuItemClick = function()
-  Exec2("CPP/Ling")
+  Exec1("CPP/Ling")
 end
 menu.add(" • Lunox                          ").onMenuItemClick = function()
-  Exec2("CPP/Lunox")
+  Exec1("CPP/Lunox")
 end
 menu.add(" • Martis                         ").onMenuItemClick = function()
-  Exec2("CPP/Martis")
+  Exec1("CPP/Martis")
 end
 menu.add(" • Mathilda                       ").onMenuItemClick = function()
-  Exec2("CPP/Mathilda")
+  Exec1("CPP/Mathilda")
 end
 menu.add(" • Minsithar                  ").onMenuItemClick = function()
-  Exec2("CPP/Minsithar")
+  Exec1("CPP/Minsithar")
 end
 menu.add(" • Miya                      ").onMenuItemClick = function()
-  Exec2("CPP/Miya")
+  Exec1("CPP/Miya")
 end
 menu.add(" • Moskov                      ").onMenuItemClick = function()
-  Exec2("CPP/Moskov")
+  Exec1("CPP/Moskov")
 end
 menu.add(" • Natalia                     ").onMenuItemClick = function()
-  Exec2("CPP/Natalia")
+  Exec1("CPP/Natalia")
 end
 menu.add(" • Paquito                     ").onMenuItemClick = function()
-  Exec2("CPP/Paquito")
+  Exec1("CPP/Paquito")
 end
 menu.add(" • Pharsa                    ").onMenuItemClick = function()
-  Exec2("CPP/Pharsa")
+  Exec1("CPP/Pharsa")
 end
 menu.add(" • Popol & Kupa               ").onMenuItemClick = function()
-  Exec2("CPP/Popol")
+  Exec1("CPP/Popol")
 end
 menu.add(" • Roger                    ").onMenuItemClick = function()
-  Exec2("CPP/Roger")
+  Exec1("CPP/Roger")
 end
 menu.add(" • Ruby                    ").onMenuItemClick = function()
-  Exec2("CPP/Ruby")
+  Exec1("CPP/Ruby")
 end
 menu.add(" • Selena                   ").onMenuItemClick = function()
-  Exec2("CPP/Selena")
+  Exec1("CPP/Selena")
 end
 menu.add(" • Silvana                ").onMenuItemClick = function()
-  Exec2("CPP/Silvana")
+  Exec1("CPP/Silvana")
 end
 menu.add(" • Terizla               ").onMenuItemClick = function()
-  Exec2("CPP/Terizla")
+  Exec1("CPP/Terizla")
 end
 menu.add(" • Thamuz             ").onMenuItemClick = function()
-  Exec2("CPP/Thamuz")
+  Exec1("CPP/Thamuz")
 end
 menu.add(" • Uranus             ").onMenuItemClick = function()
-  Exec2("CPP/Uranus")
+  Exec1("CPP/Uranus")
 end
 menu.add(" • X-Borg             ").onMenuItemClick = function()
-  Exec2("CPP/Xborg")
+  Exec1("CPP/Xborg")
 end
 menu.add(" • Yi Sun Shin         ").onMenuItemClick = function()
-  Exec2("CPP/Yss")
+  Exec1("CPP/Yss")
 end
 menu.add(" • Yu Zhong          ").onMenuItemClick = function()
-  Exec2("CPP/Yuzhong")
+  Exec1("CPP/Yuzhong")
 end
 menu.add(" • Yve             ").onMenuItemClick = function()
-  Exec2("CPP/Yve")
+  Exec1("CPP/Yve")
 end
 
-
-function attackspeed.OnCheckedChangeListener()
-  if attackspeed.checked then
-    Exec("libmime.so 11")
-   else
-    Exec("libmime.so 12")
-  end
-end
 
 function wallhack.OnCheckedChangeListener()
   if wallhack.checked then
