@@ -363,11 +363,11 @@ function Exec(one)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..two)
     Runtime.getRuntime().exec("su -c "..two)
-thread(Refresh) 
+    thread(Refresh)
    else
     os.execute("chmod 777 "..two)
     Runtime.getRuntime().exec(""..two)
-thread(Refresh) 
+    thread(Refresh)
   end
 end
 
@@ -378,11 +378,11 @@ function Exec2(CPP)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..dir)
     Runtime.getRuntime().exec("su -c "..dir)
-thread(Refresh) 
+    thread(Refresh)
    else
     os.execute("chmod 777 "..dir)
     Runtime.getRuntime().exec(""..dir)
-thread(Refresh) 
+    thread(Refresh)
   end
 end
 
@@ -890,7 +890,7 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20210729"--Expired Date
+    Date1 = "20210727"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
     Date3 = "20210727"--Current Date
     date = os.date("%Y%m%d")
@@ -913,4 +913,5 @@ function LoginExpired()
 end
 
 LoginExpired()
+
 
