@@ -766,57 +766,46 @@ droneviewside.setOnSeekBarChangeListener{
     if progress==0 then
       text2.setText("• HORIZONTAL 0X")
       Exec("libsocket.so 42")
-    thread(Refresh)
     end
     if progress==1 then
       text2.setText("• HORIZONTAL 2X")
       Exec("libsocket.so  41")
-    thread(Refresh)
     end
     if progress==2 then
       text2.setText("• HORIZONTAL 4X")
       Exec("libsocket.so 40")
-    thread(Refresh)
     end
     if progress==3 then
       text2.setText("• HORIZONTAL 6X")
       Exec("libsocket.so 39")
-    thread(Refresh)
     end
     if progress==4 then
       text2.setText("• HORIZONTAL 8X")
       Exec("libsocket.so 38")
-    thread(Refresh)
     end
     if progress==5 then
       text2.setText("• HORIZONTAL 10X")
       Exec("libsocket.so 37")
-    thread(Refresh)
     end
     if progress==6 then
       text2.setText("• HORIZONTAL 12X")
       Exec("libsocket.so 36")
-    thread(Refresh)
     end
     if progress==7 then
       text2.setText("• HORIZONTAL 14X")
       Exec("libsocket.so 35")
-    thread(Refresh)
     end
     if progress==8 then
       text2.setText("• HORIZONTAL 16X")
       Exec("libsocket.so 34")
-    thread(Refresh)
     end
     if progress==9 then
       text2.setText("• HORIZONTAL 18X")
       Exec("libsocket.so 33")
-    thread(Refresh)
     end
     if progress==10 then
       text2.setText("• HORIZONTAL 20X")
       Exec("libsocket.so 32")
-    thread(Refresh)
     end
   end
 }
@@ -849,7 +838,6 @@ function antiban.OnCheckedChangeListener()
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d_X-HANNYA"))
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d_X-HANNYA"))
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d_X-HANNYA"))
-    thread(Refresh)
    else
     import "java.io.File"--导入File类
     File("storage/emulated/0/Android/data/com.mobile.legends/X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/cache"))
@@ -876,7 +864,6 @@ function antiban.OnCheckedChangeListener()
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d"))
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d"))
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d"))
-    thread(Refresh)
   end
 end
 
@@ -894,7 +881,6 @@ function logs.onClick()
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2/")
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin")
     TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
-    thread(Refresh)
    else
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/cache/")
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord/")
@@ -908,7 +894,6 @@ function logs.onClick()
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2/")
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin")
     TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
-    thread(Refresh)
   end
 end
 
