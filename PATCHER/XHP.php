@@ -469,11 +469,11 @@ function Exec(one)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..two)
     Runtime.getRuntime().exec("su -c "..two)
-    thread(Refresh)
+  
    else
     os.execute("chmod 777 "..two)
     Runtime.getRuntime().exec(""..two)
-    thread(Refresh)
+    
   end
 end
 
@@ -484,11 +484,10 @@ function Exec2(CPP)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..dir)
     Runtime.getRuntime().exec("su -c "..dir)
-    thread(Refresh)
+    
    else
     os.execute("chmod 777 "..dir)
     Runtime.getRuntime().exec(""..dir)
-    thread(Refresh)
   end
 end
 
