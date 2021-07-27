@@ -109,12 +109,9 @@ end
 TOASTTXT = L0_1
 
 
-
-
 if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
   intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
 end
-
 
 os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
 io.open("/storage/emulated/0/XHP-PROJECT/JOIN TELEGRAM @xhp_project", "w+")
@@ -146,8 +143,8 @@ function CircleButton(view,InsideColor,radiu,InsideColor1)
 end
 
 function run()
-  dd = tonumber("29") - tonumber(os.date("%d"))
-  hh=tonumber("9") - tonumber(os.date("%H"))
+  dd = tonumber("27") - tonumber(os.date("%d"))
+  hh=tonumber("21") - tonumber(os.date("%H"))
   mm=tonumber("60") - tonumber(os.date("%M"))
   day= tostring(dd)
   hour= tostring(hh)
@@ -275,16 +272,20 @@ end
 
 function start.onClick()
   Waterdropanimation(start,20)
+      vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+      vibrator.vibrate( long{20,10} ,-5)
   if isMax==false then
     isMax=true
     LayoutVIP1.addView(minWindow,A3params1)
    else
-    TOASTTXT("CHEAT IS RUNNING !!")
+   TOASTTXT("CHEAT IS RUNNING !!")
   end
 end
 
 function stop.onClick()
   Waterdropanimation(stop,20)
+      vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+      vibrator.vibrate( long{20,10} ,-5)
   if isMax==true && OpenM==true then
     isMax=false OpenM=false
     LayoutVIP.removeView(mainWindow)
@@ -302,6 +303,8 @@ end
 
 function playid.onClick()
   if pcall(function()
+      vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+      vibrator.vibrate( long{20,10} ,-5)
       activity.getPackageManager().getPackageInfo("com.mobile.legends", 0)
     end) then
     this.startActivity(activity.getPackageManager().getLaunchIntentForPackage("com.mobile.legends"))
@@ -314,16 +317,22 @@ end
 
 
 telegram.onClick=function()
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   url = "http://t.me/xhp_project"
   activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 end
 
 youtube.onClick=function()
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   url = "https://youtube.com/channel/UCdLqzSTn88RBFeeCEH8D1RA"
   activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 end
 
 exit.onClick=function()
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   activity.finish()
 end
 
@@ -346,31 +355,31 @@ CircleButton(droneviewside,0xFF202428,20,0xFFFFFFFF)
 droneviewtop.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
 droneviewside.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
 
+
 function Exec(one)
   local two=activity.getApplicationInfo().nativeLibraryDir.."/"..(one)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..two)
     Runtime.getRuntime().exec("su -c "..two)
-    thread(Refresh)
+    Thread.sleep("5")
    else
     os.execute("chmod 777 "..two)
     Runtime.getRuntime().exec(""..two)
-    thread(Refresh)
+    Thread.sleep("5")
   end
 end
 
 
-
-function Exec2(CPP)
-  local dir=activity.getLuaDir(CPP)
+function Exec1(cpp)
+  local dir=activity.getLuaDir(cpp)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..dir)
     Runtime.getRuntime().exec("su -c "..dir)
-    thread(Refresh)
+    Thread.sleep("5")
    else
     os.execute("chmod 777 "..dir)
     Runtime.getRuntime().exec(""..dir)
-    thread(Refresh)
+    Thread.sleep("5")
   end
 end
 
@@ -382,188 +391,180 @@ hero = PopupMenu(activity, hero)
 menu = hero.Menu
 
 menu.add(" • Aldous                                            ").onMenuItemClick = function()
-  Exec2("CPP/Aldous")
+  Exec1("CPP/Aldous")
 end
 menu.add(" • Alucard                                   ").onMenuItemClick = function()
-  Exec2("CPP/Alucard")
+  Exec1("CPP/Alucard")
 end
 menu.add(" • Atlas                                     ").onMenuItemClick = function()
-  Exec2("CPP/Atlas")
+  Exec1("CPP/Atlas")
 end
 menu.add(" • Barats                                     ").onMenuItemClick = function()
-  Exec2("CPP/Barats")
+  Exec1("CPP/Barats")
 end
 menu.add(" • Beatrix                                       ").onMenuItemClick = function()
-  Exec2("CPP/Beatrix")
+  Exec1("CPP/Beatrix")
 end
 menu.add(" • Benedetta                                  ").onMenuItemClick = function()
-  Exec2("CPP/Benedetta")
+  Exec1("CPP/Benedetta")
 end
 menu.add(" • Brody                                       ").onMenuItemClick = function()
-  Exec2("CPP/Brody")
+  Exec1("CPP/Brody")
 end
 menu.add(" • Bruno                                      ").onMenuItemClick = function()
-  Exec2("CPP/Bruno")
+  Exec1("CPP/Bruno")
 end
 menu.add(" • Chou                                        ").onMenuItemClick = function()
-  Exec2("CPP/Chou")
+  Exec1("CPP/Chou")
 end
 menu.add(" • Claude                                     ").onMenuItemClick = function()
-  Exec2("CPP/Claude")
+  Exec1("CPP/Claude")
 end
 menu.add(" • Clint                                      ").onMenuItemClick = function()
-  Exec2("CPP/Clint")
+  Exec1("CPP/Clint")
 end
 menu.add(" • Dyroth                                    ").onMenuItemClick = function()
-  Exec2("CPP/Dyroth")
+  Exec1("CPP/Dyroth")
 end
 menu.add(" • Esmeralda                                   ").onMenuItemClick = function()
-  Exec2("CPP/Esmeralda")
+  Exec1("CPP/Esmeralda")
 end
 menu.add(" • Fanny                                   ").onMenuItemClick = function()
-  Exec2("CPP/Fanny")
+  Exec1("CPP/Fanny")
 end
 menu.add(" • Freya                                   ").onMenuItemClick = function()
-  Exec2("CPP/Freya")
+  Exec1("CPP/Freya")
 end
 menu.add(" • Granger                                   ").onMenuItemClick = function()
-  Exec2("CPP/Granger")
+  Exec1("CPP/Granger")
 end
 menu.add(" • Guinevere                                   ").onMenuItemClick = function()
-  Exec2("CPP/Guinevere")
+  Exec1("CPP/Guinevere")
 end
 menu.add(" • Gusion                                   ").onMenuItemClick = function()
-  Exec2("CPP/Gusion")
+  Exec1("CPP/Gusion")
 end
 menu.add(" • Hanabi                                   ").onMenuItemClick = function()
-  Exec2("CPP/Hanabi")
+  Exec1("CPP/Hanabi")
 end
 menu.add(" • Hanzo                                   ").onMenuItemClick = function()
-  Exec2("CPP/Hanzo")
+  Exec1("CPP/Hanzo")
 end
 menu.add(" • Harith                                  ").onMenuItemClick = function()
-  Exec2("CPP/Harith")
+  Exec1("CPP/Harith")
 end
 menu.add(" • Harley                                  ").onMenuItemClick = function()
-  Exec2("CPP/Harley")
+  Exec1("CPP/Harley")
 end
 menu.add(" • Hayabusa                              ").onMenuItemClick = function()
-  Exec2("CPP/Hayabusa")
+  Exec1("CPP/Hayabusa")
 end
 menu.add(" • Helcurt                                 ").onMenuItemClick = function()
-  Exec2("CPP/Helcurt")
+  Exec1("CPP/Helcurt")
 end
 menu.add(" • Jawhead                               ").onMenuItemClick = function()
-  Exec2("CPP/Jawhead")
+  Exec1("CPP/Jawhead")
 end
 menu.add(" • Kadita                              ").onMenuItemClick = function()
-  Exec2("CPP/Kadita")
+  Exec1("CPP/Kadita")
 end
 menu.add(" • Kagura                             ").onMenuItemClick = function()
-  Exec2("CPP/Kagura")
+  Exec1("CPP/Kagura")
 end
 menu.add(" • Karina                            ").onMenuItemClick = function()
-  Exec2("CPP/Karina")
+  Exec1("CPP/Karina")
 end
 menu.add(" • Karrie                            ").onMenuItemClick = function()
-  Exec2("CPP/Karrie")
+  Exec1("CPP/Karrie")
 end
 menu.add(" • Khaleed                            ").onMenuItemClick = function()
-  Exec2("CPP/Khaleed")
+  Exec1("CPP/Khaleed")
 end
 menu.add(" • Kimmy                            ").onMenuItemClick = function()
-  Exec2("CPP/Kimmy")
+  Exec1("CPP/Kimmy")
 end
 menu.add(" • Kufra                           ").onMenuItemClick = function()
-  Exec2("CPP/Kufra")
+  Exec1("CPP/Kufra")
 end
 menu.add(" • Lancelot                      ").onMenuItemClick = function()
-  Exec2("CPP/Lancelot")
+  Exec1("CPP/Lancelot")
 end
 menu.add(" • Lapu Lapu                     ").onMenuItemClick = function()
-  Exec2("CPP/Lapu")
+  Exec1("CPP/Lapu")
 end
 menu.add(" • Leomord                           ").onMenuItemClick = function()
-  Exec2("CPP/Leomord")
+  Exec1("CPP/Leomord")
 end
 menu.add(" • Lesley                          ").onMenuItemClick = function()
-  Exec2("CPP/Lesley")
+  Exec1("CPP/Lesley")
 end
 menu.add(" • Ling                          ").onMenuItemClick = function()
-  Exec2("CPP/Ling")
+  Exec1("CPP/Ling")
 end
 menu.add(" • Lunox                          ").onMenuItemClick = function()
-  Exec2("CPP/Lunox")
+  Exec1("CPP/Lunox")
 end
 menu.add(" • Martis                         ").onMenuItemClick = function()
-  Exec2("CPP/Martis")
+  Exec1("CPP/Martis")
 end
 menu.add(" • Mathilda                       ").onMenuItemClick = function()
-  Exec2("CPP/Mathilda")
+  Exec1("CPP/Mathilda")
 end
 menu.add(" • Minsithar                  ").onMenuItemClick = function()
-  Exec2("CPP/Minsithar")
+  Exec1("CPP/Minsithar")
 end
 menu.add(" • Miya                      ").onMenuItemClick = function()
-  Exec2("CPP/Miya")
+  Exec1("CPP/Miya")
 end
 menu.add(" • Moskov                      ").onMenuItemClick = function()
-  Exec2("CPP/Moskov")
+  Exec1("CPP/Moskov")
 end
 menu.add(" • Natalia                     ").onMenuItemClick = function()
-  Exec2("CPP/Natalia")
+  Exec1("CPP/Natalia")
 end
 menu.add(" • Paquito                     ").onMenuItemClick = function()
-  Exec2("CPP/Paquito")
+  Exec1("CPP/Paquito")
 end
 menu.add(" • Pharsa                    ").onMenuItemClick = function()
-  Exec2("CPP/Pharsa")
+  Exec1("CPP/Pharsa")
 end
 menu.add(" • Popol & Kupa               ").onMenuItemClick = function()
-  Exec2("CPP/Popol")
+  Exec1("CPP/Popol")
 end
 menu.add(" • Roger                    ").onMenuItemClick = function()
-  Exec2("CPP/Roger")
+  Exec1("CPP/Roger")
 end
 menu.add(" • Ruby                    ").onMenuItemClick = function()
-  Exec2("CPP/Ruby")
+  Exec1("CPP/Ruby")
 end
 menu.add(" • Selena                   ").onMenuItemClick = function()
-  Exec2("CPP/Selena")
+  Exec1("CPP/Selena")
 end
 menu.add(" • Silvana                ").onMenuItemClick = function()
-  Exec2("CPP/Silvana")
+  Exec1("CPP/Silvana")
 end
 menu.add(" • Terizla               ").onMenuItemClick = function()
-  Exec2("CPP/Terizla")
+  Exec1("CPP/Terizla")
 end
 menu.add(" • Thamuz             ").onMenuItemClick = function()
-  Exec2("CPP/Thamuz")
+  Exec1("CPP/Thamuz")
 end
 menu.add(" • Uranus             ").onMenuItemClick = function()
-  Exec2("CPP/Uranus")
+  Exec1("CPP/Uranus")
 end
 menu.add(" • X-Borg             ").onMenuItemClick = function()
-  Exec2("CPP/Xborg")
+  Exec1("CPP/Xborg")
 end
 menu.add(" • Yi Sun Shin         ").onMenuItemClick = function()
-  Exec2("CPP/Yss")
+  Exec1("CPP/Yss")
 end
 menu.add(" • Yu Zhong          ").onMenuItemClick = function()
-  Exec2("CPP/Yuzhong")
+  Exec1("CPP/Yuzhong")
 end
 menu.add(" • Yve             ").onMenuItemClick = function()
-  Exec2("CPP/Yve")
+  Exec1("CPP/Yve")
 end
 
-
-function attackspeed.OnCheckedChangeListener()
-  if attackspeed.checked then
-    Exec("libmime.so 11")
-   else
-    Exec("libmime.so 12")
-  end
-end
 
 function wallhack.OnCheckedChangeListener()
   if wallhack.checked then
