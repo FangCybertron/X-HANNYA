@@ -260,6 +260,8 @@ function t1.onClick(v)
 end
 
 function t1.onLongClick(v)
+  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
+  vibrator.vibrate( long{20,10} ,-5)
   if isMax==true && OpenM==true then
     isMax=false OpenM=false
     LayoutVIP.removeView(mainWindow)
@@ -361,25 +363,26 @@ function Exec(one)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..two)
     Runtime.getRuntime().exec("su -c "..two)
-    Thread.sleep("5")
+    thread(Refresh)
    else
     os.execute("chmod 777 "..two)
     Runtime.getRuntime().exec(""..two)
-    Thread.sleep("5")
+    thread(Refresh)
   end
 end
 
 
-function Exec1(cpp)
-  local dir=activity.getLuaDir(cpp)
+
+function Exec2(CPP)
+  local dir=activity.getLuaDir(CPP)
   if RootUtil().haveRoot()==true then
     os.execute("su -c chmod 777 "..dir)
     Runtime.getRuntime().exec("su -c "..dir)
-    Thread.sleep("5")
+    thread(Refresh)
    else
     os.execute("chmod 777 "..dir)
     Runtime.getRuntime().exec(""..dir)
-    Thread.sleep("5")
+    thread(Refresh)
   end
 end
 
@@ -391,186 +394,198 @@ hero = PopupMenu(activity, hero)
 menu = hero.Menu
 
 menu.add(" • Aldous                                            ").onMenuItemClick = function()
-  Exec1("CPP/Aldous")
+  Exec2("CPP/Aldous")
 end
 menu.add(" • Alucard                                   ").onMenuItemClick = function()
-  Exec1("CPP/Alucard")
+  Exec2("CPP/Alucard")
 end
 menu.add(" • Atlas                                     ").onMenuItemClick = function()
-  Exec1("CPP/Atlas")
+  Exec2("CPP/Atlas")
 end
 menu.add(" • Barats                                     ").onMenuItemClick = function()
-  Exec1("CPP/Barats")
+  Exec2("CPP/Barats")
 end
 menu.add(" • Beatrix                                       ").onMenuItemClick = function()
-  Exec1("CPP/Beatrix")
+  Exec2("CPP/Beatrix")
 end
 menu.add(" • Benedetta                                  ").onMenuItemClick = function()
-  Exec1("CPP/Benedetta")
+  Exec2("CPP/Benedetta")
 end
 menu.add(" • Brody                                       ").onMenuItemClick = function()
-  Exec1("CPP/Brody")
+  Exec2("CPP/Brody")
 end
 menu.add(" • Bruno                                      ").onMenuItemClick = function()
-  Exec1("CPP/Bruno")
+  Exec2("CPP/Bruno")
 end
 menu.add(" • Chou                                        ").onMenuItemClick = function()
-  Exec1("CPP/Chou")
+  Exec2("CPP/Chou")
 end
 menu.add(" • Claude                                     ").onMenuItemClick = function()
-  Exec1("CPP/Claude")
+  Exec2("CPP/Claude")
 end
 menu.add(" • Clint                                      ").onMenuItemClick = function()
-  Exec1("CPP/Clint")
+  Exec2("CPP/Clint")
 end
 menu.add(" • Dyroth                                    ").onMenuItemClick = function()
-  Exec1("CPP/Dyroth")
+  Exec2("CPP/Dyroth")
 end
 menu.add(" • Esmeralda                                   ").onMenuItemClick = function()
-  Exec1("CPP/Esmeralda")
+  Exec2("CPP/Esmeralda")
 end
 menu.add(" • Fanny                                   ").onMenuItemClick = function()
-  Exec1("CPP/Fanny")
+  Exec2("CPP/Fanny")
 end
 menu.add(" • Freya                                   ").onMenuItemClick = function()
-  Exec1("CPP/Freya")
+  Exec2("CPP/Freya")
 end
 menu.add(" • Granger                                   ").onMenuItemClick = function()
-  Exec1("CPP/Granger")
+  Exec2("CPP/Granger")
 end
 menu.add(" • Guinevere                                   ").onMenuItemClick = function()
-  Exec1("CPP/Guinevere")
+  Exec2("CPP/Guinevere")
 end
 menu.add(" • Gusion                                   ").onMenuItemClick = function()
-  Exec1("CPP/Gusion")
+  Exec2("CPP/Gusion")
 end
 menu.add(" • Hanabi                                   ").onMenuItemClick = function()
-  Exec1("CPP/Hanabi")
+  Exec2("CPP/Hanabi")
 end
 menu.add(" • Hanzo                                   ").onMenuItemClick = function()
-  Exec1("CPP/Hanzo")
+  Exec2("CPP/Hanzo")
 end
 menu.add(" • Harith                                  ").onMenuItemClick = function()
-  Exec1("CPP/Harith")
+  Exec2("CPP/Harith")
 end
 menu.add(" • Harley                                  ").onMenuItemClick = function()
-  Exec1("CPP/Harley")
+  Exec2("CPP/Harley")
 end
 menu.add(" • Hayabusa                              ").onMenuItemClick = function()
-  Exec1("CPP/Hayabusa")
+  Exec2("CPP/Hayabusa")
 end
 menu.add(" • Helcurt                                 ").onMenuItemClick = function()
-  Exec1("CPP/Helcurt")
+  Exec2("CPP/Helcurt")
 end
 menu.add(" • Jawhead                               ").onMenuItemClick = function()
-  Exec1("CPP/Jawhead")
+  Exec2("CPP/Jawhead")
 end
 menu.add(" • Kadita                              ").onMenuItemClick = function()
-  Exec1("CPP/Kadita")
+  Exec2("CPP/Kadita")
 end
 menu.add(" • Kagura                             ").onMenuItemClick = function()
-  Exec1("CPP/Kagura")
+  Exec2("CPP/Kagura")
 end
 menu.add(" • Karina                            ").onMenuItemClick = function()
-  Exec1("CPP/Karina")
+  Exec2("CPP/Karina")
 end
 menu.add(" • Karrie                            ").onMenuItemClick = function()
-  Exec1("CPP/Karrie")
+  Exec2("CPP/Karrie")
 end
 menu.add(" • Khaleed                            ").onMenuItemClick = function()
-  Exec1("CPP/Khaleed")
+  Exec2("CPP/Khaleed")
 end
 menu.add(" • Kimmy                            ").onMenuItemClick = function()
-  Exec1("CPP/Kimmy")
+  Exec2("CPP/Kimmy")
 end
 menu.add(" • Kufra                           ").onMenuItemClick = function()
-  Exec1("CPP/Kufra")
+  Exec2("CPP/Kufra")
 end
 menu.add(" • Lancelot                      ").onMenuItemClick = function()
-  Exec1("CPP/Lancelot")
+  Exec2("CPP/Lancelot")
 end
 menu.add(" • Lapu Lapu                     ").onMenuItemClick = function()
-  Exec1("CPP/Lapu")
+  Exec2("CPP/Lapu")
 end
 menu.add(" • Leomord                           ").onMenuItemClick = function()
-  Exec1("CPP/Leomord")
+  Exec2("CPP/Leomord")
 end
 menu.add(" • Lesley                          ").onMenuItemClick = function()
-  Exec1("CPP/Lesley")
+  Exec2("CPP/Lesley")
 end
 menu.add(" • Ling                          ").onMenuItemClick = function()
-  Exec1("CPP/Ling")
+  Exec2("CPP/Ling")
 end
 menu.add(" • Lunox                          ").onMenuItemClick = function()
-  Exec1("CPP/Lunox")
+  Exec2("CPP/Lunox")
 end
 menu.add(" • Martis                         ").onMenuItemClick = function()
-  Exec1("CPP/Martis")
+  Exec2("CPP/Martis")
 end
 menu.add(" • Mathilda                       ").onMenuItemClick = function()
-  Exec1("CPP/Mathilda")
+  Exec2("CPP/Mathilda")
 end
 menu.add(" • Minsithar                  ").onMenuItemClick = function()
-  Exec1("CPP/Minsithar")
+  Exec2("CPP/Minsithar")
 end
 menu.add(" • Miya                      ").onMenuItemClick = function()
-  Exec1("CPP/Miya")
+  Exec2("CPP/Miya")
 end
 menu.add(" • Moskov                      ").onMenuItemClick = function()
-  Exec1("CPP/Moskov")
+  Exec2("CPP/Moskov")
 end
 menu.add(" • Natalia                     ").onMenuItemClick = function()
-  Exec1("CPP/Natalia")
+  Exec2("CPP/Natalia")
 end
 menu.add(" • Paquito                     ").onMenuItemClick = function()
-  Exec1("CPP/Paquito")
+  Exec2("CPP/Paquito")
 end
 menu.add(" • Pharsa                    ").onMenuItemClick = function()
-  Exec1("CPP/Pharsa")
+  Exec2("CPP/Pharsa")
 end
 menu.add(" • Popol & Kupa               ").onMenuItemClick = function()
-  Exec1("CPP/Popol")
+  Exec2("CPP/Popol")
 end
 menu.add(" • Roger                    ").onMenuItemClick = function()
-  Exec1("CPP/Roger")
+  Exec2("CPP/Roger")
 end
 menu.add(" • Ruby                    ").onMenuItemClick = function()
-  Exec1("CPP/Ruby")
+  Exec2("CPP/Ruby")
 end
 menu.add(" • Selena                   ").onMenuItemClick = function()
-  Exec1("CPP/Selena")
+  Exec2("CPP/Selena")
 end
 menu.add(" • Silvana                ").onMenuItemClick = function()
-  Exec1("CPP/Silvana")
+  Exec2("CPP/Silvana")
 end
 menu.add(" • Terizla               ").onMenuItemClick = function()
-  Exec1("CPP/Terizla")
+  Exec2("CPP/Terizla")
 end
 menu.add(" • Thamuz             ").onMenuItemClick = function()
-  Exec1("CPP/Thamuz")
+  Exec2("CPP/Thamuz")
 end
 menu.add(" • Uranus             ").onMenuItemClick = function()
-  Exec1("CPP/Uranus")
+  Exec2("CPP/Uranus")
 end
 menu.add(" • X-Borg             ").onMenuItemClick = function()
-  Exec1("CPP/Xborg")
+  Exec2("CPP/Xborg")
 end
 menu.add(" • Yi Sun Shin         ").onMenuItemClick = function()
-  Exec1("CPP/Yss")
+  Exec2("CPP/Yss")
 end
 menu.add(" • Yu Zhong          ").onMenuItemClick = function()
-  Exec1("CPP/Yuzhong")
+  Exec2("CPP/Yuzhong")
 end
 menu.add(" • Yve             ").onMenuItemClick = function()
-  Exec1("CPP/Yve")
+  Exec2("CPP/Yve")
 end
 
+
+function attackspeed.OnCheckedChangeListener()
+  if attackspeed.checked then
+    Exec("libmime.so 11")
+    thread(Refresh)
+   else
+    Exec("libmime.so 12")
+    thread(Refresh)
+  end
+end
 
 function wallhack.OnCheckedChangeListener()
   if wallhack.checked then
     Exec("libmime.so 7")
+    thread(Refresh)
    else
     Exec("libmime.so 8")
+    thread(Refresh)
   end
 end
 
@@ -578,8 +593,10 @@ end
 function autospawn.OnCheckedChangeListener()
   if autospawn.checked then
     Exec("libmime.so 9")
+    thread(Refresh)
    else
     Exec("libmime.so 10")
+    thread(Refresh)
   end
 end
 
@@ -587,8 +604,10 @@ end
 function unlockskin.OnCheckedChangeListener()
   if unlockskin.checked then
     Exec("libmime.so 5")
+    thread(Refresh)
    else
     Exec("libmime.so 6")
+    thread(Refresh)
   end
 end
 
@@ -596,8 +615,10 @@ end
 function emblem.OnCheckedChangeListener()
   if emblem.checked then
     Exec("libmime.so 3")
+    thread(Refresh)
    else
     Exec("libmime.so 4")
+    thread(Refresh)
   end
 end
 
@@ -605,8 +626,10 @@ end
 function fixgrass.OnCheckedChangeListener()
   if fixgrass.checked then
     Exec("libmime.so 1")
+    thread(Refresh)
    else
     Exec("libmime.so 2")
+    thread(Refresh)
   end
 end
 
@@ -614,8 +637,10 @@ end
 function removegrass.OnCheckedChangeListener()
   if removegrass.checked then
     Exec("libcjson.so 1")
+    thread(Refresh)
    else
     Exec("libcjson.so 2")
+    thread(Refresh)
   end
 end
 
@@ -623,8 +648,10 @@ end
 function hidename.OnCheckedChangeListener()
   if hidename.checked then
     Exec("libcjson.so 3 ")
+    thread(Refresh)
    else
     Exec("libcjson.so 4")
+    thread(Refresh)
   end
 end
 
@@ -632,8 +659,10 @@ end
 function radarmap.OnCheckedChangeListener()
   if radarmap.checked then
     Exec("libsocket.so 2")
+    thread(Refresh)
    else
     Exec("libsocket.so 3")
+    thread(Refresh)
   end
 end
 
@@ -641,8 +670,10 @@ end
 function spamchat.OnCheckedChangeListener()
   if spamchat.checked then
     Exec("libsocket.so 6")
+    thread(Refresh)
    else
     Exec("libsocket.so 7")
+    thread(Refresh)
   end
 end
 
@@ -650,8 +681,10 @@ end
 function skillnocd.OnCheckedChangeListener()
   if skillnocd.checked then
     Exec("libsocket.so 8")
+    thread(Refresh)
    else
     Exec("libsocket.so 9")
+    thread(Refresh)
   end
 end
 
@@ -659,8 +692,10 @@ end
 function esplock.OnCheckedChangeListener()
   if esplock.checked then
     Exec("libsocket.so 30")
+    thread(Refresh)
    else
     Exec("libsocket.so 31")
+    thread(Refresh)
   end
 end
 
@@ -670,46 +705,57 @@ droneviewtop.setOnSeekBarChangeListener{
     if progress==0 then
       text.setText("• VERTICAL 0X")
       Exec("libsocket.so 22")
+    thread(Refresh)
     end
     if progress==1 then
       text.setText("• VERTICAL 2X")
       Exec("libsocket.so 21")
+    thread(Refresh)
     end
     if progress==2 then
       text.setText("• VERTICAL 4X")
       Exec("libsocket.so 20")
+    thread(Refresh)
     end
     if progress==3 then
       text.setText("• VERTICAL 6X")
       Exec("libsocket.so 19")
+    thread(Refresh)
     end
     if progress==4 then
       text.setText("• VERTICAL 8X")
       Exec("libsocket.so 18")
+    thread(Refresh)
     end
     if progress==5 then
       text.setText("• VERTICAL 10X")
       Exec("libsocket.so 17")
+    thread(Refresh)
     end
     if progress==6 then
       text.setText("• VERTICAL 12X")
       Exec("libsocket.so 16")
+    thread(Refresh)
     end
     if progress==7 then
       text.setText("• VERTICAL 14X")
       Exec("libsocket.so 15")
+    thread(Refresh)
     end
     if progress==8 then
       text.setText("• VERTICAL 16X")
       Exec("libsocket.so 14")
+    thread(Refresh)
     end
     if progress==9 then
       text.setText("• VERTICAL 18X")
       Exec("libsocket.so 13")
+    thread(Refresh)
     end
     if progress==10 then
       text.setText("• VERTICAL 20X")
       Exec("libsocket.so 12")
+    thread(Refresh)
     end
   end
 }
@@ -720,46 +766,57 @@ droneviewside.setOnSeekBarChangeListener{
     if progress==0 then
       text2.setText("• HORIZONTAL 0X")
       Exec("libsocket.so 42")
+    thread(Refresh)
     end
     if progress==1 then
       text2.setText("• HORIZONTAL 2X")
       Exec("libsocket.so  41")
+    thread(Refresh)
     end
     if progress==2 then
       text2.setText("• HORIZONTAL 4X")
       Exec("libsocket.so 40")
+    thread(Refresh)
     end
     if progress==3 then
       text2.setText("• HORIZONTAL 6X")
       Exec("libsocket.so 39")
+    thread(Refresh)
     end
     if progress==4 then
       text2.setText("• HORIZONTAL 8X")
       Exec("libsocket.so 38")
+    thread(Refresh)
     end
     if progress==5 then
       text2.setText("• HORIZONTAL 10X")
       Exec("libsocket.so 37")
+    thread(Refresh)
     end
     if progress==6 then
       text2.setText("• HORIZONTAL 12X")
       Exec("libsocket.so 36")
+    thread(Refresh)
     end
     if progress==7 then
       text2.setText("• HORIZONTAL 14X")
       Exec("libsocket.so 35")
+    thread(Refresh)
     end
     if progress==8 then
       text2.setText("• HORIZONTAL 16X")
       Exec("libsocket.so 34")
+    thread(Refresh)
     end
     if progress==9 then
       text2.setText("• HORIZONTAL 18X")
       Exec("libsocket.so 33")
+    thread(Refresh)
     end
     if progress==10 then
       text2.setText("• HORIZONTAL 20X")
       Exec("libsocket.so 32")
+    thread(Refresh)
     end
   end
 }
@@ -792,6 +849,7 @@ function antiban.OnCheckedChangeListener()
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d_X-HANNYA"))
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d_X-HANNYA"))
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d_X-HANNYA"))
+    thread(Refresh)
    else
     import "java.io.File"--导入File类
     File("storage/emulated/0/Android/data/com.mobile.legends/X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/cache"))
@@ -818,6 +876,7 @@ function antiban.OnCheckedChangeListener()
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d"))
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d"))
     File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d"))
+    thread(Refresh)
   end
 end
 
@@ -835,6 +894,7 @@ function logs.onClick()
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2/")
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin")
     TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
+    thread(Refresh)
    else
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/cache/")
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord/")
@@ -848,6 +908,7 @@ function logs.onClick()
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2/")
     os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin")
     TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
+    thread(Refresh)
   end
 end
 
@@ -902,4 +963,3 @@ function LoginExpired()
 end
 
 LoginExpired()
-
