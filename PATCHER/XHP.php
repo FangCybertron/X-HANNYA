@@ -15,6 +15,7 @@ import "android.graphics.Typeface"
 import "layout"
 
 
+
 local function isVpnUsed()
   import "java.net.NetworkInterface"
   import "java.util.Collections"
@@ -109,9 +110,129 @@ end
 TOASTTXT = L0_1
 
 
-if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
-  intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+function loginLY()
+
+  import "login"
+  Logindialog = AlertDialogBuilder(this);
+  Logindialog.setView(loadlayout(login))
+  Logindialog.setCancelable(false)
+  dialogX=Logindialog.show()
+  import "android.graphics.drawable.GradientDrawable"
+  local radiu=10
+  dialogX.getWindow().setBackgroundDrawable(GradientDrawable().setCornerRadii({radiu,radiu,radiu,radiu,radiu,radiu,radiu,radiu}).setColor(0x00000000))
+
+
+  function Waterdropanimation(Controls,time)
+    import "android.animation.ObjectAnimator"
+    ObjectAnimator().ofFloat(Controls,"scaleX",{1,.8,1.3,.9,1}).setDuration(time).start()
+    ObjectAnimator().ofFloat(Controls,"scaleY",{1,.8,1.3,.9,1}).setDuration(time).start()
+  end
+
+  pstatus.IndeterminateDrawable.setColorFilter(PorterDuffColorFilter(0xFFFFFFFF,PorterDuff.Mode.SRC_ATOP))
+
+  local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+  username = pref.getString("username", "")
+  txtUsername.setTypeface(Typeface.MONOSPACE)
+
+  remember = pref.getString("rememberme", "")
+  if remember == "true" then
+    txtUsername.setText(username)
+    rememberme.setChecked(true)
+   else
+    rememberme.setChecked(false)
+  end
+
+
+  function rememberme.OnCheckedChangeListener()
+    if rememberme.checked then
+      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+      local save = pref.edit()
+      save.putString("rememberme", "true")
+      save.commit()
+     else
+      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+      local save = pref.edit()
+      save.putString("rememberme", "false")
+      save.commit()
+    end
+  end
+
+
+  function btnLogin.onClick()
+    Waterdropanimation(btnLogin,20)
+    local username = txtUsername.Text
+    if username =="" then
+      TOASTTXT("INPUT KEY")
+     else
+      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+      local save = pref.edit()
+      save.putString("username",username)
+      save.commit()
+      pstatus.setVisibility(LinearLayout.VISIBLE)
+      loginY.setVisibility(LinearLayout.GONE)
+      urla="https://pastebin.com/raw/9WxAZsHK"
+      Http.get(urla,nil,function(code,content)
+        AP=content:match("【S】(.-)【S】")
+        if AP== txtUsername.Text then
+          -------------------------------------------------
+          Logindialog.dismiss();
+          -------------------------------------------------
+         else
+          -------------------------------------------------
+          TOASTTXT("INVALID KEY")
+          pstatus.setVisibility(LinearLayout.GONE)
+          loginY.setVisibility(LinearLayout.VISIBLE)
+          -------------------------------------------------
+        end
+      end)
+    end
+  end
+
+
+  function cancel.onClick()
+    Waterdropanimation(cancel,20)
+    activity.finish()
+  end
 end
+loginLY()
+
+
+
+function Checkpermissions(WRITE_EXTERNAL_STORAGE)
+  import "android.Manifest"
+  import "android.content.pm.PackageManager"
+  if (activity.checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+    return false
+   else
+    return true
+  end
+end
+
+
+if not Checkpermissions (WRITE_EXTERNAL_STORAGE) then
+  dialog=AlertDialog.Builder(this)
+  .setTitle("  Application Need Permissions")
+  .setMessage(" ")
+  .setCancelable(false)
+  .setPositiveButton("ALLOW",
+  {onClick=function(v)
+      intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
+      activity.startActivityForResult(intent, 1234)
+    end})
+  .show()
+ else
+end
+
+
+function onActivityResult(requestCode,resultCode, data)
+  if (requestCode == 1234) then
+    if not Checkpermissions (WRITE_EXTERNAL_STORAGE) then
+     else
+    end
+  end
+end
+
+
 
 os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
 io.open("/storage/emulated/0/XHP-PROJECT/JOIN TELEGRAM @xhp_project", "w+")
@@ -143,8 +264,8 @@ function CircleButton(view,InsideColor,radiu,InsideColor1)
 end
 
 function run()
-  dd = tonumber("27") - tonumber(os.date("%d"))
-  hh=tonumber("21") - tonumber(os.date("%H"))
+  dd = tonumber("29") - tonumber(os.date("%d"))
+  hh=tonumber("9") - tonumber(os.date("%H"))
   mm=tonumber("60") - tonumber(os.date("%M"))
   day= tostring(dd)
   hour= tostring(hh)
@@ -260,8 +381,6 @@ function t1.onClick(v)
 end
 
 function t1.onLongClick(v)
-  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-  vibrator.vibrate( long{20,10} ,-5)
   if isMax==true && OpenM==true then
     isMax=false OpenM=false
     LayoutVIP.removeView(mainWindow)
@@ -274,8 +393,6 @@ end
 
 function start.onClick()
   Waterdropanimation(start,20)
-  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-  vibrator.vibrate( long{20,10} ,-5)
   if isMax==false then
     isMax=true
     LayoutVIP1.addView(minWindow,A3params1)
@@ -286,8 +403,6 @@ end
 
 function stop.onClick()
   Waterdropanimation(stop,20)
-  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-  vibrator.vibrate( long{20,10} ,-5)
   if isMax==true && OpenM==true then
     isMax=false OpenM=false
     LayoutVIP.removeView(mainWindow)
@@ -305,8 +420,6 @@ end
 
 function playid.onClick()
   if pcall(function()
-      vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-      vibrator.vibrate( long{20,10} ,-5)
       activity.getPackageManager().getPackageInfo("com.mobile.legends", 0)
     end) then
     this.startActivity(activity.getPackageManager().getLaunchIntentForPackage("com.mobile.legends"))
@@ -319,22 +432,16 @@ end
 
 
 telegram.onClick=function()
-  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-  vibrator.vibrate( long{20,10} ,-5)
   url = "http://t.me/xhp_project"
   activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 end
 
 youtube.onClick=function()
-  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-  vibrator.vibrate( long{20,10} ,-5)
   url = "https://youtube.com/channel/UCdLqzSTn88RBFeeCEH8D1RA"
   activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 end
 
 exit.onClick=function()
-  vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-  vibrator.vibrate( long{20,10} ,-5)
   activity.finish()
 end
 
@@ -356,7 +463,6 @@ CircleButton(droneviewside,0xFF202428,20,0xFFFFFFFF)
 --SeekBar
 droneviewtop.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
 droneviewside.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
-
 
 function Exec(one)
   local two=activity.getApplicationInfo().nativeLibraryDir.."/"..(one)
@@ -890,7 +996,7 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20210727"--Expired Date
+    Date1 = "20210729"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
     Date3 = "20210727"--Current Date
     date = os.date("%Y%m%d")
@@ -913,5 +1019,4 @@ function LoginExpired()
 end
 
 LoginExpired()
-
 
