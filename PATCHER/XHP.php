@@ -12,7 +12,7 @@ import "android.net.Uri"
 import "android.provider.Settings"
 import "com.androlua.util.RootUtil"
 import "android.graphics.Typeface"
-local root=os.execute("su")
+local root=RootUtil()
 
 
 
@@ -1377,8 +1377,8 @@ function CircleButton(view,InsideColor,radiu,InsideColor1)
 end
 
 function run()
-  dd = tonumber("27") - tonumber(os.date("%d"))
-  hh=tonumber("21") - tonumber(os.date("%H"))
+  dd = tonumber("30") - tonumber(os.date("%d"))
+  hh=tonumber("24") - tonumber(os.date("%H"))
   mm=tonumber("60") - tonumber(os.date("%M"))
   day= tostring(dd)
   hour= tostring(hh)
@@ -1609,7 +1609,7 @@ droneviewside.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,P
 
 function Exec(CPP)
   local dir=activity.getLuaDir(CPP)
-  if RootUtil().haveRoot()==true then
+  if root().haveRoot()==true then
     thread(Refresh)
     os.execute("su -c chmod 777 "..dir)
     thread(Refresh)
