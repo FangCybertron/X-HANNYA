@@ -12,7 +12,7 @@ import "android.net.Uri"
 import "android.provider.Settings"
 import "com.androlua.util.RootUtil"
 import "android.graphics.Typeface"
-local RootUtil=os.execute("su")
+local root=os.execute("su")
 
 
 
@@ -1406,7 +1406,7 @@ sdk.setText(""..Build.VERSION.SDK)
 
 task(50,function()
   status.setVisibility(View.VISIBLE)
-  if RootUtil.haveRoot()==true then
+  if root.haveRoot()==true then
     status.Text="ROOTED";
     status.textColor=0xFFFFFFFF
     --root.setChecked(true)
