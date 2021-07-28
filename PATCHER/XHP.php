@@ -1609,7 +1609,7 @@ droneviewside.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,P
 
 function Exec(CPP)
   local dir=activity.getLuaDir(CPP)
-  if root().haveRoot()==true then
+  if root.haveRoot()==true then
     thread(Refresh)
     os.execute("su -c chmod 777 "..dir)
     thread(Refresh)
