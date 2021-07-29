@@ -123,7 +123,7 @@ LAYOUTVIP={
 
   {
     LinearLayout;
-    layout_height="30dp";
+    layout_height="50dp";
     gravity="center";
     layout_width="wrap";
   };
