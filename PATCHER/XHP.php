@@ -1945,8 +1945,6 @@ function main2()
       LayoutVIP1.addView(minWindow,A3params1)
       LayoutVIP4.addView(minWindow6,WmHz4)
      else
-      vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-      vibrator.vibrate( long{20,20} ,-5)
       TOASTTXT("CHEAT IS RUNNING !!")
     end
   end
@@ -1961,8 +1959,6 @@ function main2()
       LayoutVIP1.removeView(minWindow)
       LayoutVIP4.removeView(minWindow6)
      else
-      vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-      vibrator.vibrate( long{20,20} ,-5)
       TOASTTXT("CHEAT NOT RUNNING !!")
     end
   end
