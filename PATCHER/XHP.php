@@ -1715,8 +1715,8 @@ function main2()
       id="iconf";
       {
         ImageView;
-        layout_height="45dp";
-        layout_width="45dp";
+        layout_height="50dp";
+        layout_width="50dp";
         src="res/iconf.png";
         id="Win_minWindow";
         padding="3dp";
