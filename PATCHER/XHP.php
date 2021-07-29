@@ -119,12 +119,19 @@ activity.ActionBar.hide()
 
 
 LAYOUTVIP={
+
+
   LinearLayout;
   backgroundColor="0xFF202428";
   layout_width="fill";
   orientation="vertical";
   layout_height="fill";
 
+  {
+    LinearLayout;
+    layout_height="10dp";
+    layout_width="wrap";
+  };
 
   {
     TextView;
