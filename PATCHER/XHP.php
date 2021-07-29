@@ -462,7 +462,7 @@ function main2()
   import "android.provider.Settings"
   import "com.androlua.util.RootUtil"
   import "android.graphics.Typeface"
-  local RootUtil=RootUtil()
+  local root=RootUtil()
 
 
 
@@ -1760,7 +1760,7 @@ function main2()
 
   task(50,function()
     status.setVisibility(View.VISIBLE)
-    if RootUtil.haveRoot()==true then
+    if root.haveRoot()==true then
       status.Text="ROOTED";
       status.textColor=0xFFFFFFFF
       --root.setChecked(true)
@@ -1963,7 +1963,7 @@ function main2()
 
   function Exec(dex)
     local dir=activity.getLuaDir(dex)
-    if RootUtil().haveRoot()==true then
+    if root.haveRoot()==true then
       thread(Refresh)
       os.execute("su -c chmod 777 "..dir)
       thread(Refresh)
