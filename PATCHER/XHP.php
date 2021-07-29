@@ -1,20 +1,21 @@
+require "import"
+import "android.app.*"
+import "android.os.*"
+import "android.widget.*"
+import "android.view.*"
+import "android.content.Context"
+import "AndLua"
+import "android.content.*"
+import "android.provider.Settings"
+import "android.net.Uri"
+import "android.content.Intent"
+import "android.content.pm.PackageManager"
+import "android.graphics.PixelFormat"
+import "android.graphics.Typeface"
+import "android.content.Context"
+import "http"
 
 
-  require "import"
-  import "android.app.*"
-  import "android.os.*"
-  import "android.widget.*"
-  import "android.view.*"
-  import "android.graphics.drawable.BitmapDrawable"
-  import "android.graphics.PorterDuff"
-  import "android.graphics.PorterDuffColorFilter"
-  import "android.content.Context"
-  import "android.content.Intent"
-  import "android.net.Uri"
-  import "android.provider.Settings"
-  import "com.androlua.util.RootUtil"
-  import "android.graphics.Typeface"
-  local root=RootUtil()
 
   local function isVpnUsed()
     import "java.net.NetworkInterface"
@@ -111,9 +112,384 @@
 
 
 
-if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
-  intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+
+LAYOUTVIP={
+
+  LinearLayout;
+  backgroundColor="0xFF202428";
+  layout_width="fill";
+  orientation="vertical";
+  layout_height="fill";
+
+  {
+    LinearLayout;
+    layout_height="30dp";
+    gravity="center";
+    layout_width="wrap";
+  };
+
+  {
+    TextView;
+    id="titlelogin";
+    text="WELCOME";
+    padding="8dp";
+    textSize="40sp";
+    layout_gravity="center";
+    textColor="0xFF008EFF";
+    gravity="center";
+  };
+
+  {
+    LinearLayout;
+    layout_height="30dp";
+    gravity="center";
+    layout_width="wrap";
+    layout_gravity="center";
+  };
+
+  {
+    CardView;
+    --orientation="horizontal";
+    backgroundColor="0xFFFFFFFF";
+    cardElevation="30dp";
+    radius=50;
+    layout_height="wrap";
+    layout_width="85%w";
+    --gravity="center";
+    id="us";
+    Visibility="visible";
+    layout_gravity="center";
+    {
+      LinearLayout;
+      layout_width="wrap";
+      gravity="center";
+      orientation="horizontal";
+      layout_height="wrap";
+      layout_gravity="center";
+
+      {
+        EditText;
+        TextColor="0xFF000000";
+        id="txtUsername";
+        layout_width="80%w";
+        padding="5dp";
+        layout_height="40dp";
+        hintTextColor="#519D9E";
+        hint="Username";
+        textSize="15sp";
+        background="#00000000";
+      };
+    };
+  };
+  {
+    LinearLayout;
+    layout_height="10dp";
+    gravity="center";
+    layout_width="wrap";
+  };
+
+
+      {
+        CheckBox;
+        layout_marginLeft="35dp";
+        id="rememberme";
+        text="Remember Me";
+        gravity="center";
+        textSize="13";
+        textColor="0xFFFFFFFF";
+      };
+
+  {
+    LinearLayout;
+    layout_height="10dp";
+    gravity="center";
+    layout_width="wrap";
+    layout_gravity="center";
+  };
+
+  {
+    LinearLayout;
+    orientation="horizontal";
+    layout_width="match_parent";
+    layout_height="50dp";
+    layout_marginLeft="110dp";
+    layout_marginRight="110dp";
+    {
+      CardView;
+      backgroundColor="0xFF008EFF";
+      layout_margin="5dp";
+      layout_height="match_parent";
+      id="btnLogin";
+      CardElevation="30dp";
+      layout_width="50dp";
+      radius=10;
+      layout_weight="1";
+      layout_gravity="center";
+      {
+        LinearLayout;
+        backgroundColor="0x00000000";
+        layout_width="match_parent";
+        orientation="horizontal";
+        layout_height="match_parent";
+        gravity="center";
+        layout_gravity="center";
+        {
+          TextView;
+          text="LOGIN";
+          id="login";
+          textSize="20sp";
+          textColor="0xFFFFFFFF";
+          layout_gravity="center";
+        };
+      };
+    };
+  };
+};
+
+
+
+
+  activity.setTheme(android.R.style.Theme_DeviceDefault)
+  activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+  --activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS).setStatusBarColor(0xFF000000);
+  activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+  activity.setContentView(loadlayout(LAYOUTVIP))
+  activity.ActionBar.hide()
+
+
+function Waterdropanimation(Controls,time)
+  import "android.animation.ObjectAnimator"
+  ObjectAnimator().ofFloat(Controls,"scaleX",{1,.8,1.3,.9,1}).setDuration(time).start()
+  ObjectAnimator().ofFloat(Controls,"scaleY",{1,.8,1.3,.9,1}).setDuration(time).start()
 end
+
+
+function CircleButton(view,InsideColor,radiu,InsideColor1)
+  import "android.graphics.drawable.GradientDrawable"
+  drawable = GradientDrawable()
+  drawable.setShape(GradientDrawable.RECTANGLE)
+  drawable.setCornerRadii({radiu, radiu, radiu, radiu, radiu, radiu, radiu, radiu})
+  drawable.setColor(InsideColor)
+  drawable.setStroke(2, InsideColor1)
+  view.setBackgroundDrawable(drawable)
+end
+
+
+
+
+import "android.view.animation.AlphaAnimation"
+Alpha=AlphaAnimation(0,1)
+Alpha.setDuration(800)
+
+
+
+
+
+
+
+--CircleButton(us,0x20000000,10,0x00000000)
+--CircleButton(pw,0x20000000,10,0x00000000)
+--CircleButton(uidX,0x20000000,10,0x00000000)
+
+
+
+
+
+
+function proggresmod()
+  P_layout={
+    LinearLayout;
+    layout_height="fill";
+    layout_width="fill";
+    orientation="horizontal";
+    gravity="center";
+    {
+      LinearLayout;
+      orientation="vertical";
+      layout_height="fill";
+      layout_width="fill";
+      gravity="center";
+      layout_gravity="center";
+      {
+        ProgressBar;
+        layout_gravity="center";
+        layout_width="70dp";
+        style="?android:attr/progressBarStyleLarge";
+        layout_height="70dp";
+        layout_margin="5dp";
+      };
+      {
+        TextView;
+        id="",
+        text="Please Wait",
+        layout_width="fill";
+        layout_gravity="center";
+        textColor="0xFFFFFFFF";
+        gravity="center";
+      };
+    };
+  };
+
+  local D=AlertDialog.Builder(this)
+  D.setView(loadlayout(P_layout))
+  D.setCancelable(false)
+  X=D.show()
+  import "android.graphics.drawable.GradientDrawable"
+  local radiu=0
+  X.getWindow().setBackgroundDrawable(GradientDrawable().setCornerRadii({radiu,radiu,radiu,radiu,radiu,radiu,radiu,radiu}).setColor(0x00000000))
+end
+
+
+
+local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+username = pref.getString("username", "")
+txtUsername.setTypeface(Typeface.MONOSPACE)
+
+remember = pref.getString("rememberme", "")
+  if remember == "true" then
+    txtUsername.setText(username)
+    rememberme.setChecked(true)
+   else
+    rememberme.setChecked(false)
+  end
+
+
+  function rememberme.OnCheckedChangeListener()
+    if rememberme.checked then
+      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+      local save = pref.edit()
+      save.putString("rememberme", "true")
+      save.commit()
+     else
+      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+      local save = pref.edit()
+      save.putString("rememberme", "false")
+      save.commit()
+    end
+  end
+
+
+function LoginExpired()
+  function Exp1()
+    local D1 = AlertDialog.Builder(this)
+    D1.setTitle("        APPLICATION EXPIRED")
+    D1.setMessage("PLEASE CONTACT DEVELOPER TO GET UPDATE !!\n\nᴅᴏɴ'ᴛ ᴛʀʏ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ シ︎")
+    D1.setCancelable(false)
+    D1.setPositiveButton(" EXIT ",{onClick=function(v)
+        activity.finish()
+      end})
+    SANKY1=D1.show()
+  end
+
+
+  function Exp2()
+    local D2 = AlertDialog.Builder(this)
+    D2.setTitle("   FAILED TO BYPASS EXPIRED")
+    D2.setMessage("ɪ sᴀɪᴅ ᴅᴏɴ'ᴛ ᴛʀʏ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ, ʙᴇᴄᴀᴜsᴇ ᴛʜᴀᴛ ᴅᴏᴇsɴ'ᴛ ᴡᴏʀᴋ ᴀɴʏᴍᴏʀᴇ シ︎\n\n              FUCK YOU BITCH !!!")
+    D2.setCancelable(false)
+    D2.setPositiveButton(" EXIT ",{onClick=function(v)
+        activity.finish()
+      end})
+    SANKY2=D2.show()
+  end
+
+  Exp1()
+  Exp2()
+
+  function expired()
+    Date1 = "20210731"--Expired Date
+    Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
+    Date3 = "20210729"--Current Date
+    date = os.date("%Y%m%d")
+    --------DATE1
+    if date >= Date1 then
+      SANKY2.dismiss()
+     else
+      --------DATE2
+      if date >= Date2 then
+        SANKY1.dismiss()
+      end
+      --------DATE3
+      if date >= Date3 then
+        SANKY1.dismiss()
+        SANKY2.dismiss()
+      end
+    end
+  end
+  expired()
+end
+
+
+
+
+
+function btnLogin.onClick()
+  Waterdropanimation(btnLogin,20)
+  local username = txtUsername.text
+  if username =="" then
+    TOASTTXT("ENTER KEY")
+     else
+      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+      local save = pref.edit()
+      save.putString("username",username)
+      save.commit()
+      proggresmod()
+        urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/PATCHER/key.php"
+        Http.get(urla,nil,function(code,content)
+            AP=content:match("【S】(.-)【S】")
+            if AP== txtUsername.text
+            X.dismiss()
+            LoginExpired()
+            main2()
+         else
+          TOASTTXT("INVALID KEY")
+        end
+      end)
+    end
+  end
+
+
+
+
+rememberme.ButtonDrawable.setColorFilter(PorterDuffColorFilter(0xFFFFFFFF,PorterDuff.Mode.SRC_ATOP));
+function rememberme.OnCheckedChangeListener()
+  if rememberme.Checked then
+   else
+    rememberme.ButtonDrawable.setColorFilter(PorterDuffColorFilter(0xFFFFFFFF,PorterDuff.Mode.SRC_ATOP));
+  end
+end
+
+login.setTypeface(Typeface.DEFAULT_BOLD)
+titlelogin.setTypeface(Typeface.DEFAULT_BOLD)
+us.setVisibility(LinearLayout.VISIBLE)
+btnLogin.setVisibility(LinearLayout.VISIBLE)
+rememberme.setVisibility(LinearLayout.VISIBLE)
+
+
+
+function main2()
+  require "import"
+  import "android.app.*"
+  import "android.os.*"
+  import "android.widget.*"
+  import "android.view.*"
+  import "android.graphics.drawable.BitmapDrawable"
+  import "android.graphics.PorterDuff"
+  import "android.graphics.PorterDuffColorFilter"
+  import "android.content.Context"
+  import "android.content.Intent"
+  import "android.net.Uri"
+  import "android.provider.Settings"
+  import "com.androlua.util.RootUtil"
+  import "android.graphics.Typeface"
+  import "http"
+  local root=RootUtil()
+
+
+  if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
+    intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+    TOASTTXT("Application Require Permission")
+  end
 
   os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
   io.open("/storage/emulated/0/XHP-PROJECT/JOIN TELEGRAM @xhp_project", "w+")
@@ -1504,8 +1880,6 @@ end
   end
 
   function t1.onLongClick(v)
-    vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-    vibrator.vibrate( long{20,9} ,-5)
     if isMax==true && OpenM==true then
       isMax=false OpenM=false
       LayoutVIP.removeView(mainWindow)
@@ -1517,8 +1891,9 @@ end
 
   function start.onClick()
     Waterdropanimation(start,20)
-    vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-    vibrator.vibrate( long{20,9} ,-5)
+    if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
+    intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+    end
     if isMax==false then
       isMax=true
       LayoutVIP1.addView(minWindow,A3params1)
@@ -1531,8 +1906,6 @@ end
 
   function stop.onClick()
     Waterdropanimation(stop,20)
-    vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-    vibrator.vibrate( long{20,9} ,-5)
     if isMax==true && OpenM==true then
       isMax=false OpenM=false
       LayoutVIP.removeView(mainWindow)
@@ -1551,8 +1924,6 @@ end
 
 
   function playid.onClick()
-    vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-    vibrator.vibrate( long{20,9} ,-5)
     if pcall(function()
         activity.getPackageManager().getPackageInfo("com.mobile.legends", 0)
       end) then
@@ -1566,22 +1937,16 @@ end
 
 
   telegram.onClick=function()
-    vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-    vibrator.vibrate( long{20,9} ,-5)
     url = "http://t.me/xhp_project"
     activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
   end
 
   youtube.onClick=function()
-    vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-    vibrator.vibrate( long{20,9} ,-5)
     url = "https://youtube.com/channel/UCdLqzSTn88RBFeeCEH8D1RA"
     activity.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
   end
 
   exit.onClick=function()
-    vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
-    vibrator.vibrate( long{20,10} ,-5)
     activity.finish()
   end
 
@@ -2251,4 +2616,4 @@ end
   end
 
 
-
+end
