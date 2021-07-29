@@ -1796,7 +1796,7 @@ end
   LayoutVIP=activity.getSystemService(Context.WINDOW_SERVICE)
   HasFocus=false
   A3params =WindowManager.LayoutParams()
-  if Build.VERSION.SDK_INT >= 26 then A3params.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+  if Build.VERSION.SDK_INT >= 30 then A3params.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
    else A3params.type =WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
   end
   import "android.graphics.PixelFormat"
@@ -1814,7 +1814,7 @@ end
   LayoutVIP1=activity.getSystemService(Context.WINDOW_SERVICE)
   HasFocus=false
   A3params1 =WindowManager.LayoutParams()
-  if Build.VERSION.SDK_INT >= 26 then A3params1.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+  if Build.VERSION.SDK_INT >= 30 then A3params1.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
    else A3params1.type =WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
   end
   import "android.graphics.PixelFormat"
