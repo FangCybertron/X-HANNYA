@@ -1716,6 +1716,24 @@ function main2()
     };
   };
 
+textfloating={
+  LinearLayout;
+  layout_width="fill";
+  layout_height="fill";
+  gravity="center";
+  {
+    TextView;
+    typeface=Typeface.DEFAULT_BOLD,
+    gravity="center";
+    text="";
+    layout_height="wrap";
+    textColor="0xFFFFFF00";
+    textSize="14sp";
+    layout_width="fill";
+    layout_gravity="bottom";
+    id="asp";
+  };
+};
 
 
   activity.setTheme(R.AndLua6)
@@ -1764,6 +1782,21 @@ function main2()
 
 
 
+  function time()
+    hb()
+  end
+  function hb(十二)
+    asp.setText(os.date("%H:%M | %d-%m-%Y"))
+  end
+  function Refresh()
+    require("import")
+    while true do
+      Thread.sleep(100)
+      call("time")
+    end
+  end
+  thread(Refresh)
+
 
   model.setText(""..Build.MODEL)
   android.setText(""..Build.VERSION.RELEASE)
@@ -1783,6 +1816,30 @@ function main2()
   end)
 
 
+
+ LayoutVIP4=activity.getSystemService(Context.WINDOW_SERVICE)
+  HasFocus=false
+  WmHz4 =WindowManager.LayoutParams()
+  if Build.VERSION.SDK_INT >= 26 then WmHz4.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
+   else WmHz4.type =WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
+  end
+  import "android.graphics.PixelFormat"
+  WmHz4.format =PixelFormat.RGBA_8888
+  WmHz4.flags=WindowManager.LayoutParams().FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+  WmHz4.gravity = Gravity.CENTER| Gravity.BOTTOM
+  WmHz4.x = 0
+  WmHz4.y = 0
+  minWindow6 = loadlayout(textfloating)
+
+  function Win_minWindow6()
+    if isMax==false then
+      isMax=true
+      LayoutVIP4.addView(minWindow6,WmHz4)
+     else
+      isMax=false
+      LayoutVIP4.removeView(minWindow6)
+    end
+  end
 
 
   LayoutVIP=activity.getSystemService(Context.WINDOW_SERVICE)
@@ -1874,6 +1931,7 @@ function main2()
     if isMax==true && OpenM==true then
       isMax=false OpenM=false
       LayoutVIP.removeView(mainWindow)
+      LayoutVIP4.removeView(minWindow6)
     end
   end
 
@@ -1888,6 +1946,7 @@ function main2()
     if isMax==false then
       isMax=true
       LayoutVIP1.addView(minWindow,A3params1)
+      LayoutVIP4.addView(minWindow6,WmHz4)
      else
       vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
       vibrator.vibrate( long{20,20} ,-5)
@@ -1903,6 +1962,7 @@ function main2()
      elseif isMax==true && OpenM==false then
       isMax=false
       LayoutVIP1.removeView(minWindow)
+      LayoutVIP4.removeView(minWindow6)
      else
       vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
       vibrator.vibrate( long{20,20} ,-5)
