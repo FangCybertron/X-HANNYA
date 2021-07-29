@@ -372,7 +372,7 @@ remember = pref.getString("rememberme", "")
 function LoginExpired()
   function Exp1()
     local D1 = AlertDialog.Builder(this)
-    D1.setTitle("        APPLICATION EXPIRED")
+    D1.setTitle("APPLICATION EXPIRED")
     D1.setMessage("PLEASE CONTACT DEVELOPER TO GET UPDATE !!\n\nᴅᴏɴ'ᴛ ᴛʀʏ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ シ︎")
     D1.setCancelable(false)
     D1.setPositiveButton(" EXIT ",{onClick=function(v)
@@ -384,7 +384,7 @@ function LoginExpired()
 
   function Exp2()
     local D2 = AlertDialog.Builder(this)
-    D2.setTitle("   FAILED TO BYPASS EXPIRED")
+    D2.setTitle("FAILED TO BYPASS EXPIRED")
     D2.setMessage("ɪ sᴀɪᴅ ᴅᴏɴ'ᴛ ᴛʀʏ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ, ʙᴇᴄᴀᴜsᴇ ᴛʜᴀᴛ ᴅᴏᴇsɴ'ᴛ ᴡᴏʀᴋ ᴀɴʏᴍᴏʀᴇ シ︎\n\n              FUCK YOU BITCH !!!")
     D2.setCancelable(false)
     D2.setPositiveButton(" EXIT ",{onClick=function(v)
@@ -397,7 +397,7 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20210729"--Expired Date
+    Date1 = "20210731"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
     Date3 = "20210729"--Current Date
     date = os.date("%Y%m%d")
