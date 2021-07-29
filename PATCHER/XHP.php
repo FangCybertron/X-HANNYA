@@ -450,15 +450,6 @@ function btnLogin.onClick()
 
 
 
-
-rememberme.ButtonDrawable.setColorFilter(PorterDuffColorFilter(0xFFFFFFFF,PorterDuff.Mode.SRC_ATOP));
-function rememberme.OnCheckedChangeListener()
-  if rememberme.Checked then
-   else
-    rememberme.ButtonDrawable.setColorFilter(PorterDuffColorFilter(0xFFFFFFFF,PorterDuff.Mode.SRC_ATOP));
-  end
-end
-
 login.setTypeface(Typeface.DEFAULT_BOLD)
 titlelogin.setTypeface(Typeface.DEFAULT_BOLD)
 us.setVisibility(LinearLayout.VISIBLE)
