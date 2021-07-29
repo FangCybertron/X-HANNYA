@@ -1875,6 +1875,9 @@ function main2()
     Waterdropanimation(start,20)
     vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE)
     vibrator.vibrate( long{20,9} ,-5)
+if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
+  intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+end
     if isMax==false then
       isMax=true
       LayoutVIP1.addView(minWindow,A3params1)
