@@ -465,11 +465,10 @@ function main2()
   local root=RootUtil()
 
 
-
-  if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
-    intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
-    TOASTTXT("Application Require Permission")
-  end
+if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
+  intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+end
+  
 
   os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
   io.open("/storage/emulated/0/XHP-PROJECT/JOIN TELEGRAM @xhp_project", "w+")
