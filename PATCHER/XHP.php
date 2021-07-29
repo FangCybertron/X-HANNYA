@@ -1724,7 +1724,7 @@ textfloating={
   {
     TextView;
     typeface=Typeface.DEFAULT_BOLD,
-    gravity="center";
+    gravity="left";
     text="";
     layout_height="wrap";
     textColor="0xFFFFFF00";
@@ -1802,8 +1802,7 @@ textfloating={
   android.setText(""..Build.VERSION.RELEASE)
   sdk.setText(""..Build.VERSION.SDK)
 
-  task(50,function()
-    status.setVisibility(View.VISIBLE)
+
     if root.haveRoot()==true then
       status.Text="ROOTED";
       status.textColor=0xFFFFFFFF
@@ -1813,9 +1812,7 @@ textfloating={
       status.textColor=0xFFFFFFFF
       --noroot.setChecked(true)
     end
-  end)
-
-
+  
 
  LayoutVIP4=activity.getSystemService(Context.WINDOW_SERVICE)
   HasFocus=false
