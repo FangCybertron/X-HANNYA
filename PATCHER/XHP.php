@@ -17,98 +17,98 @@ import "http"
 
 
 
-  local function isVpnUsed()
-    import "java.net.NetworkInterface"
-    import "java.util.Collections"
-    import "java.util.Enumeration"
-    import "java.util.Iterator"
-    local nlp= NetworkInterface.getNetworkInterfaces();
-    if (nlp~=nil) then
-      local it = Collections.list(nlp).iterator();
-      while (it.hasNext()) do
-        local nlo = it.next();
-        if (nlo.isUp() && nlo.getInterfaceAddresses().size() ~= 0) then
-          if ((tostring(nlo):find("tun0")) or (tostring(nlo):find("ppp0"))) then
-            return true
-          end
+local function isVpnUsed()
+  import "java.net.NetworkInterface"
+  import "java.util.Collections"
+  import "java.util.Enumeration"
+  import "java.util.Iterator"
+  local nlp= NetworkInterface.getNetworkInterfaces();
+  if (nlp~=nil) then
+    local it = Collections.list(nlp).iterator();
+    while (it.hasNext()) do
+      local nlo = it.next();
+      if (nlo.isUp() && nlo.getInterfaceAddresses().size() ~= 0) then
+        if ((tostring(nlo):find("tun0")) or (tostring(nlo):find("ppp0"))) then
+          return true
         end
       end
-      return false
     end
+    return false
   end
-  local y=pcall(function()
-    local ti=Ticker()
-    ti.Period=100
-    ti.start()
-    ti.onTick=function()
-      pcall(function()
-        if isVpnUsed() then
-          os.exit()--退出程序。          --如果你不延迟的话，就直接显示不了信息。
-          ti.stop()--退出程序时停止计时器。
-          activity.finish()--关闭当前页面。
-        end
-      end)
-    end
-    function onDestroy()
-      ti.stop()
-    end
-  end)
-
-
-  tickexit=0
-  function onKeyDown(code,event)
-    if string.find(tostring(event),"KEYCODE_BACK") ~= nil then
-      if tickexit+3 > tonumber(os.time()) then
-        activity.finish()
-       else
-        TOASTTXT("Press Back Again To Exit App")
-        tickexit=tonumber(os.time())
+end
+local y=pcall(function()
+  local ti=Ticker()
+  ti.Period=100
+  ti.start()
+  ti.onTick=function()
+    pcall(function()
+      if isVpnUsed() then
+        os.exit()--退出程序。          --如果你不延迟的话，就直接显示不了信息。
+        ti.stop()--退出程序时停止计时器。
+        activity.finish()--关闭当前页面。
       end
-      return true
-    end
+    end)
   end
+  function onDestroy()
+    ti.stop()
+  end
+end)
 
 
-  local L0_1
-  L0_1 = {
-    LinearLayout,
+tickexit=0
+function onKeyDown(code,event)
+  if string.find(tostring(event),"KEYCODE_BACK") ~= nil then
+    if tickexit+3 > tonumber(os.time()) then
+      activity.finish()
+     else
+      TOASTTXT("Press Back Again To Exit App")
+      tickexit=tonumber(os.time())
+    end
+    return true
+  end
+end
+
+
+local L0_1
+L0_1 = {
+  LinearLayout,
+  {
+    CardView,
+    radius = "10",
+    layout_width = "wrap",
+    layout_marginRight = "30dp",
+    backgroundColor = "0xFFFFFFFF",
+    layout_marginTop = "25dp",
+    layout_height = "wrap",
+    layout_marginBottom = "25dp",
+    layout_marginLeft = "30dp",
     {
-      CardView,
-      radius = "10",
-      layout_width = "wrap",
-      layout_marginRight = "30dp",
-      backgroundColor = "0xFFFFFFFF",
-      layout_marginTop = "25dp",
-      layout_height = "wrap",
-      layout_marginBottom = "25dp",
-      layout_marginLeft = "30dp",
+      LinearLayout,
+      orientation = "horizontal",
+      layout_width = "match_parent",
+      layout_height = "match_parent",
+      gravity = "center",
       {
-        LinearLayout,
-        orientation = "horizontal",
+        TextView,
+        id = "toasttxt",
+        textColor = "0xFF000000",
         layout_width = "match_parent",
-        layout_height = "match_parent",
-        gravity = "center",
-        {
-          TextView,
-          id = "toasttxt",
-          textColor = "0xFF000000",
-          layout_width = "match_parent",
-          layout_height = "wrap_content",
-          padding = "10dp",
-          gravity = "center"
-        }
+        layout_height = "wrap_content",
+        padding = "10dp",
+        gravity = "center"
       }
     }
   }
-  L0_1.orientation = "vertical"
-  L0_1.layout_width = "fill"
-  L0_1.layout_height = "wrap"
-  sankycustomtoast = L0_1
-  function L0_1(A0_2)
-    toast = Toast.makeText(activity, "", Toast.LENGTH_SHORT).setView(loadlayout(sankycustomtoast)).show()
-    toasttxt.setText(A0_2)
-  end
-  TOASTTXT = L0_1
+}
+L0_1.orientation = "vertical"
+L0_1.layout_width = "fill"
+L0_1.layout_height = "wrap"
+sankycustomtoast = L0_1
+function L0_1(A0_2)
+  toast = Toast.makeText(activity, "", Toast.LENGTH_SHORT).setView(loadlayout(sankycustomtoast)).show()
+  toasttxt.setText(A0_2)
+end
+TOASTTXT = L0_1
 
 
 
@@ -189,15 +189,15 @@ LAYOUTVIP={
   };
 
 
-      {
-        CheckBox;
-        layout_marginLeft="35dp";
-        id="rememberme";
-        text="Remember Me";
-        gravity="center";
-        textSize="13";
-        textColor="0xFFFFFFFF";
-      };
+  {
+    CheckBox;
+    layout_marginLeft="35dp";
+    id="rememberme";
+    text="Remember Me";
+    gravity="center";
+    textSize="13";
+    textColor="0xFFFFFFFF";
+  };
 
   {
     LinearLayout;
@@ -249,12 +249,12 @@ LAYOUTVIP={
 
 
 
-  activity.setTheme(R.AndLua1)
-  activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
-  --activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS).setStatusBarColor(0xFF000000);
-  activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-  activity.setContentView(loadlayout(LAYOUTVIP))
-  activity.ActionBar.hide()
+activity.setTheme(R.AndLua1)
+activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
+--activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS).setStatusBarColor(0xFF000000);
+activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+activity.setContentView(loadlayout(LAYOUTVIP))
+activity.ActionBar.hide()
 
 
 function Waterdropanimation(Controls,time)
@@ -346,27 +346,27 @@ username = pref.getString("username", "")
 txtUsername.setTypeface(Typeface.MONOSPACE)
 
 remember = pref.getString("rememberme", "")
-  if remember == "true" then
-    txtUsername.setText(username)
-    rememberme.setChecked(true)
+if remember == "true" then
+  txtUsername.setText(username)
+  rememberme.setChecked(true)
+ else
+  rememberme.setChecked(false)
+end
+
+
+function rememberme.OnCheckedChangeListener()
+  if rememberme.checked then
+    local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+    local save = pref.edit()
+    save.putString("rememberme", "true")
+    save.commit()
    else
-    rememberme.setChecked(false)
+    local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+    local save = pref.edit()
+    save.putString("rememberme", "false")
+    save.commit()
   end
-
-
-  function rememberme.OnCheckedChangeListener()
-    if rememberme.checked then
-      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
-      local save = pref.edit()
-      save.putString("rememberme", "true")
-      save.commit()
-     else
-      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
-      local save = pref.edit()
-      save.putString("rememberme", "false")
-      save.commit()
-    end
-  end
+end
 
 
 function LoginExpired()
@@ -428,25 +428,25 @@ function btnLogin.onClick()
   local username = txtUsername.text
   if username =="" then
     TOASTTXT("ENTER KEY")
-     else
-      local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
-      local save = pref.edit()
-      save.putString("username",username)
-      save.commit()
-      proggresmod()
-        urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/PATCHER/key.php"
-        Http.get(urla,nil,function(code,content)
-        X.dismiss()
-            AP=content:match("【S】(.-)【S】")
-            if AP== txtUsername.text
-            LoginExpired()
-            main2()
-         else
-          TOASTTXT("INVALID KEY")
-        end
-      end)
-    end
+   else
+    local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
+    local save = pref.edit()
+    save.putString("username",username)
+    save.commit()
+    proggresmod()
+    urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/PATCHER/key.php"
+    Http.get(urla,nil,function(code,content)
+      X.dismiss()
+      AP=content:match("【S】(.-)【S】")
+      if AP== txtUsername.text
+        LoginExpired()
+        main2()
+       else
+        TOASTTXT("INVALID KEY")
+      end
+    end)
   end
+end
 
 
 rememberme.ButtonDrawable.setColorFilter(PorterDuffColorFilter(0xFFFFFFFF,PorterDuff.Mode.SRC_ATOP));
@@ -1716,24 +1716,24 @@ function main2()
     };
   };
 
-textfloating={
-  LinearLayout;
-  layout_width="fill";
-  layout_height="fill";
-  gravity="center";
-  {
-    TextView;
-    typeface=Typeface.DEFAULT_BOLD,
-    gravity="left";
-    text="";
-    layout_height="wrap";
-    textColor="0xFFFFFF00";
-    textSize="12sp";
+  textfloating={
+    LinearLayout;
     layout_width="fill";
-    layout_gravity="bottom";
-    id="asp";
+    layout_height="fill";
+    gravity="center";
+    {
+      TextView;
+      typeface=Typeface.DEFAULT_BOLD,
+      gravity="left";
+      text="";
+      layout_height="wrap";
+      textColor="0xFFFFFF00";
+      textSize="12sp";
+      layout_width="fill";
+      layout_gravity="bottom";
+      id="asp";
+    };
   };
-};
 
 
   activity.setTheme(R.AndLua6)
@@ -1803,18 +1803,18 @@ textfloating={
   sdk.setText(""..Build.VERSION.SDK)
 
 
-    if root.haveRoot()==true then
-      status.Text="ROOTED";
-      status.textColor=0xFFFFFFFF
-      --root.setChecked(true)
-     else
-      status.Text="VIRTUAL";
-      status.textColor=0xFFFFFFFF
-      --noroot.setChecked(true)
-    end
-  
+  if root.haveRoot()==true then
+    status.Text="ROOTED";
+    status.textColor=0xFFFFFFFF
+    --root.setChecked(true)
+   else
+    status.Text="VIRTUAL";
+    status.textColor=0xFFFFFFFF
+    --noroot.setChecked(true)
+  end
 
- LayoutVIP4=activity.getSystemService(Context.WINDOW_SERVICE)
+
+  LayoutVIP4=activity.getSystemService(Context.WINDOW_SERVICE)
   HasFocus=false
   WmHz4 =WindowManager.LayoutParams()
   if Build.VERSION.SDK_INT >= 26 then WmHz4.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
@@ -1938,7 +1938,7 @@ textfloating={
   function start.onClick()
     Waterdropanimation(start,20)
     if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
-    intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+      intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
     end
     if isMax==false then
       isMax=true
@@ -2418,88 +2418,66 @@ textfloating={
         thread(Refresh)
         Exec("dex/PNJ 22")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==1 then
         text.setText("• VERTICAL 2X")
         thread(Refresh)
         Exec("dex/PNJ 21")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==2 then
         text.setText("• VERTICAL 4X")
         thread(Refresh)
         Exec("dex/PNJ 20")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==3 then
         text.setText("• VERTICAL 6X")
         thread(Refresh)
         Exec("dex/PNJ 19")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==4 then
         text.setText("• VERTICAL 8X")
         thread(Refresh)
         Exec("dex/PNJ 18")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==5 then
         text.setText("• VERTICAL 10X")
         thread(Refresh)
         Exec("dex/PNJ 17")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==6 then
         text.setText("• VERTICAL 12X")
         thread(Refresh)
         Exec("dex/PNJ 16")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==7 then
         text.setText("• VERTICAL 14X")
         thread(Refresh)
         Exec("dex/PNJ 15")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==8 then
         text.setText("• VERTICAL 16X")
         thread(Refresh)
         Exec("dex/PNJ 14")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==9 then
         text.setText("• VERTICAL 18X")
         thread(Refresh)
         Exec("dex/PNJ 13")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
       if progress==10 then
         text.setText("• VERTICAL 20X")
         thread(Refresh)
         Exec("dex/PNJ 12")
         thread(Refresh)
-        Thread.sleep(4)
-        call("droneviewtop")
       end
     end
   }
@@ -2577,7 +2555,7 @@ textfloating={
   }
 
 
-function antiban.OnCheckedChangeListener()
+  function antiban.OnCheckedChangeListener()
     if antiban.checked then
       import "java.io.File"--导入File类
       File("storage/emulated/0/Android/data/com.mobile.legends/cache").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/X-HANNYA"))
@@ -2630,33 +2608,21 @@ function antiban.OnCheckedChangeListener()
   end
 
 
-  
+
   function logs.onClick()
     if logs.checked then
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/cache/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/FightHistory/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/LiveSawHistory.bin")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/UnityCache/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/code_cache/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/X-HANNYA/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/X-HANNYA/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA1/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin")
       TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
      else
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/cache/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/FightHistory/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/LiveSawHistory.bin")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/UnityCache/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/code_cache/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/X-HANNYA/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/X-HANNYA/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA1/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin")
       TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
     end
   end
