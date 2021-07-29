@@ -384,7 +384,7 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20210730"--Expired Date
+    Date1 = "20210731"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
     Date3 = "20210729"--Current Date
     date = os.date("%Y%m%d")
@@ -422,7 +422,7 @@ function btnLogin.onClick()
     save.putString("password",password)
     save.commit()
     proggresmod()
-    urla="https://pastebin.com/raw/L8QhAZfj"
+    urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/PATCHER/key.php"
     Http.get(urla,nil,function(code,content)
       X.dismiss()
       AP=content:match("【S】(.-)【S】")
@@ -466,10 +466,9 @@ function main2()
 
 
 
-
-
-  if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
+  if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
     intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+    TOASTTXT("Application Require Permission")
   end
 
   os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
@@ -1732,8 +1731,8 @@ function main2()
   end
 
   function run()
-    dd = tonumber("27") - tonumber(os.date("%d"))
-    hh=tonumber("21") - tonumber(os.date("%H"))
+    dd = tonumber("31") - tonumber(os.date("%d"))
+    hh=tonumber("24") - tonumber(os.date("%H"))
     mm=tonumber("60") - tonumber(os.date("%M"))
     day= tostring(dd)
     hour= tostring(hh)
