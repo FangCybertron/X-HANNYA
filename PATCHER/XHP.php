@@ -436,9 +436,9 @@ function btnLogin.onClick()
       proggresmod()
         urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/PATCHER/key.php"
         Http.get(urla,nil,function(code,content)
+        X.dismiss()
             AP=content:match("【S】(.-)【S】")
             if AP== txtUsername.text
-            X.dismiss()
             LoginExpired()
             main2()
          else
