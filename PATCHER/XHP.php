@@ -249,7 +249,7 @@ LAYOUTVIP={
 
 
 
-  activity.setTheme(android.R.style.Theme_DeviceDefault)
+  activity.setTheme(R.AndLua1)
   activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
   --activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS).setStatusBarColor(0xFF000000);
   activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -449,7 +449,7 @@ function btnLogin.onClick()
   end
 
 
-
+rememberme.ButtonDrawable.setColorFilter(PorterDuffColorFilter(0xFFFFFFFF,PorterDuff.Mode.SRC_ATOP));
 login.setTypeface(Typeface.DEFAULT_BOLD)
 titlelogin.setTypeface(Typeface.DEFAULT_BOLD)
 us.setVisibility(LinearLayout.VISIBLE)
@@ -1728,7 +1728,7 @@ textfloating={
     text="";
     layout_height="wrap";
     textColor="0xFFFFFF00";
-    textSize="14sp";
+    textSize="12sp";
     layout_width="fill";
     layout_gravity="bottom";
     id="asp";
@@ -2577,15 +2577,13 @@ textfloating={
   }
 
 
-  function antiban.OnCheckedChangeListener()
+function antiban.OnCheckedChangeListener()
     if antiban.checked then
       import "java.io.File"--导入File类
       File("storage/emulated/0/Android/data/com.mobile.legends/cache").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/X-HANNYA"))
       File("storage/emulated/0/Android/data/com.mobile.legends/files/UnityCache").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/X-HANNYA"))
       File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA1"))
       File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/FightHistory").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/comlibs").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/X-HANNYA_COMLIBS"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/version/android/realversion.xml").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/version/android/X-HANNYA.xml"))
       File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/LiveSawHistory.bin").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin"))
 
       File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ActivityBugReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ActivityBugReport.unity3d_X-HANNYA"))
@@ -2610,8 +2608,6 @@ textfloating={
       File("storage/emulated/0/Android/data/com.mobile.legends/files/X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/UnityCache"))
       File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA1").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord"))
       File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/FightHistory"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/X-HANNYA_COMLIBS").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/comlibs"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/version/android/X-HANNYA.xml").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/version/android/realversion.xml"))
       File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/LiveSawHistory.bin"))
 
       File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ActivityBugReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ActivityBugReport.unity3d"))
@@ -2633,6 +2629,8 @@ textfloating={
     end
   end
 
+
+  
   function logs.onClick()
     if logs.checked then
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/cache/")
