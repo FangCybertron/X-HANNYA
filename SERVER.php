@@ -19,6 +19,10 @@ import "android.graphics.PorterDuffColorFilter"
 import "android.graphics.Typeface"
 import "com.androlua.util.RootUtil"
 local root=RootUtil()
+  if root.haveRoot()==true then
+  os.execute("su")
+end
+
 
 
   if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
