@@ -15,104 +15,6 @@ import "android.graphics.Typeface"
 import "android.content.Context"
 
 
-
-
-local function isVpnUsed()
-  import "java.net.NetworkInterface"
-  import "java.util.Collections"
-  import "java.util.Enumeration"
-  import "java.util.Iterator"
-  local nlp= NetworkInterface.getNetworkInterfaces();
-  if (nlp~=nil) then
-    local it = Collections.list(nlp).iterator();
-    while (it.hasNext()) do
-      local nlo = it.next();
-      if (nlo.isUp() && nlo.getInterfaceAddresses().size() ~= 0) then
-        if ((tostring(nlo):find("tun0")) or (tostring(nlo):find("ppp0"))) then
-          return true
-        end
-      end
-    end
-    return false
-  end
-end
-local y=pcall(function()
-  local ti=Ticker()
-  ti.Period=100
-  ti.start()
-  ti.onTick=function()
-    pcall(function()
-      if isVpnUsed() then
-        os.exit()--退出程序。          --如果你不延迟的话，就直接显示不了信息。
-        ti.stop()--退出程序时停止计时器。
-        activity.finish()--关闭当前页面。
-      end
-    end)
-  end
-  function onDestroy()
-    ti.stop()
-  end
-end)
-
-
-tickexit=0
-function onKeyDown(code,event)
-  if string.find(tostring(event),"KEYCODE_BACK") ~= nil then
-    if tickexit+3 > tonumber(os.time()) then
-      activity.finish()
-     else
-      TOASTTXT("Press Back Again To Exit App")
-      tickexit=tonumber(os.time())
-    end
-    return true
-  end
-end
-
-
-local L0_1
-L0_1 = {
-  LinearLayout,
-  {
-    CardView,
-    radius = "10",
-    layout_width = "wrap",
-    layout_marginRight = "30dp",
-    backgroundColor = "0xFFFFFFFF",
-    layout_marginTop = "25dp",
-    layout_height = "wrap",
-    layout_marginBottom = "25dp",
-    layout_marginLeft = "30dp",
-    {
-      LinearLayout,
-      orientation = "horizontal",
-      layout_width = "match_parent",
-      layout_height = "match_parent",
-      gravity = "center",
-      {
-        TextView,
-        id = "toasttxt",
-        textColor = "0xFF000000",
-        layout_width = "match_parent",
-        layout_height = "wrap_content",
-        padding = "10dp",
-        gravity = "center"
-      }
-    }
-  }
-}
-L0_1.orientation = "vertical"
-L0_1.layout_width = "fill"
-L0_1.layout_height = "wrap"
-sankycustomtoast = L0_1
-function L0_1(A0_2)
-  toast = Toast.makeText(activity, "", Toast.LENGTH_SHORT).setView(loadlayout(sankycustomtoast)).show()
-  toasttxt.setText(A0_2)
-end
-TOASTTXT = L0_1
-
-
-
-
 LAYOUTVIP={
 
   LinearLayout;
@@ -473,7 +375,6 @@ function main2()
   import "android.provider.Settings"
   import "com.androlua.util.RootUtil"
   import "android.graphics.Typeface"
-  import "http"
   local root=RootUtil()
 
 
