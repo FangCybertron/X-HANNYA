@@ -47,8 +47,9 @@ LAYOUTVIP={
 
   {
     TextView;
+    typeface=Typeface.DEFAULT_BOLD,
     id="titlelogin";
-    text="WELCOME";
+    text="ＷＥＬＣＯＭＥ";
     padding="8dp";
     textSize="40sp";
     layout_gravity="center";
@@ -406,6 +407,7 @@ function main2()
 
       {
         TextView;
+        typeface=Typeface.DEFAULT_BOLD,
         text="XHP - PROJECT";
         textSize="20sp";
         textColor="0xFFFFFFFF";
@@ -1886,8 +1888,22 @@ function main2()
 
 
   --SeekBar
-  droneviewtop.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
-  droneviewside.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
+droneviewtop.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
+droneviewside.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
+radarmapicon.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+radarmap.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+attackspeed.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+wallhack.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+autospawn.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+unlockskin.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+emblem.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+fixgrass.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+removegrass.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+hidename.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+skillnocd.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+esplock.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+antiban.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
 
 
   function Exec(one)
