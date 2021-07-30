@@ -51,7 +51,7 @@ LAYOUTVIP={
     id="titlelogin";
     text="ＷＥＬＣＯＭＥ";
     padding="8dp";
-    textSize="40sp";
+    textSize="35sp";
     layout_gravity="center";
     textColor="0xFF008EFF";
     gravity="center";
@@ -93,7 +93,7 @@ LAYOUTVIP={
         padding="5dp";
         layout_height="40dp";
         hintTextColor="#519D9E";
-        hint="Username";
+        hint="INPUT YOUR KEY";
         textSize="15sp";
         background="#00000000";
       };
@@ -294,7 +294,7 @@ function LoginExpired()
     D1.setMessage("PLEASE CONTACT DEVELOPER TO GET UPDATE !!\n\nᴅᴏɴ'ᴛ ᴛʀʏ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ シ︎")
     D1.setCancelable(false)
     D1.setPositiveButton(" EXIT ",{onClick=function(v)
-        activity.finish()
+    os.exit()
       end})
     SANKY1=D1.show()
   end
@@ -306,7 +306,7 @@ function LoginExpired()
     D2.setMessage("ɪ sᴀɪᴅ ᴅᴏɴ'ᴛ ᴛʀʏ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ᴛɪᴍᴇ ᴀɴᴅ ᴅᴀᴛᴇ, ʙᴇᴄᴀᴜsᴇ ᴛʜᴀᴛ ᴅᴏᴇsɴ'ᴛ ᴡᴏʀᴋ ᴀɴʏᴍᴏʀᴇ シ︎\n\n              FUCK YOU BITCH !!!")
     D2.setCancelable(false)
     D2.setPositiveButton(" EXIT ",{onClick=function(v)
-        activity.finish()
+    os.exit()
       end})
     SANKY2=D2.show()
   end
@@ -315,9 +315,9 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20210731"--Expired Date
+    Date1 = "20210803"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
-    Date3 = "20210729"--Current Date
+    Date3 = "20210731"--Current Date
     date = os.date("%Y%m%d")
     --------DATE1
     if date >= Date1 then
@@ -345,7 +345,7 @@ function btnLogin.onClick()
   Waterdropanimation(btnLogin,20)
   local username = txtUsername.text
   if username =="" then
-    TOASTTXT("ENTER KEY")
+    TOASTTXT("INPUT KEY")
    else
     local pref = activity.getSharedPreferences("x_hannya", Context.MODE_PRIVATE)
     local save = pref.edit()
@@ -761,6 +761,7 @@ function main2()
           };
           {
             TextView;
+            typeface=Typeface.DEFAULT_BOLD,
             textColor="0xFFFFFFFF";
             layout_gravity="center";
             textSize="15sp";
@@ -799,6 +800,7 @@ function main2()
           };
           {
             TextView;
+            typeface=Typeface.DEFAULT_BOLD,
             textColor="0xFFFFFFFF";
             layout_gravity="center";
             textSize="15sp";
@@ -832,6 +834,7 @@ function main2()
         id="playid";
         {
           TextView;
+          typeface=Typeface.DEFAULT_BOLD,
           text="STARTGAME";
           layout_width="wrap";
           gravity="center";
@@ -1055,7 +1058,7 @@ function main2()
                   layout_height="wrap",
                   layout_gravity="center",
                   textColor="0xFFFFFFFF",
-                  textSize="16sp",
+                  textSize="18sp",
                   Gravity="center",
                   layout_gravity="center";
                   text="XHP - PROJECT",
@@ -1328,6 +1331,7 @@ function main2()
                                 backgroundColor = "0xFFFF0000",
                                 {
                                   TextView;
+                                  typeface=Typeface.DEFAULT_BOLD,
                                   text="CAMERA VIEW";
                                   textColor="0xFFFFFFFF";
                                   id="";
@@ -1439,6 +1443,7 @@ function main2()
                                 backgroundColor = "0xFFFF0000",
                                 {
                                   TextView;
+                                  typeface=Typeface.DEFAULT_BOLD,
                                   text="CUSTOM";
                                   textColor="0xFFFFFFFF";
                                   id="";
@@ -1545,6 +1550,7 @@ function main2()
                               },
                               {
                                 ToggleButton,
+                                typeface=Typeface.DEFAULT_BOLD,
                                 textSize="11sp";
                                 layout_grafity="center";
                                 text = "CLEAR CACHE & LOGS",
@@ -1585,32 +1591,13 @@ function main2()
       id="iconf";
       {
         ImageView;
-        layout_height="50dp";
-        layout_width="50dp";
+        layout_height="48dp";
+        layout_width="48dp";
         src="res/iconf.png";
         id="Win_minWindow";
         padding="3dp";
         colorFilter="#090707";
       };
-    };
-  };
-
-  textfloating={
-    LinearLayout;
-    layout_width="fill";
-    layout_height="fill";
-    gravity="center";
-    {
-      TextView;
-      typeface=Typeface.DEFAULT_BOLD,
-      gravity="left";
-      text="";
-      layout_height="wrap";
-      textColor="0xFFFFFF00";
-      textSize="12sp";
-      layout_width="fill";
-      layout_gravity="bottom";
-      id="asp";
     };
   };
 
@@ -1639,7 +1626,7 @@ function main2()
   end
 
   function run()
-    dd = tonumber("31") - tonumber(os.date("%d"))
+    dd = tonumber("33") - tonumber(os.date("%d"))
     hh=tonumber("24") - tonumber(os.date("%H"))
     mm=tonumber("60") - tonumber(os.date("%M"))
     day= tostring(dd)
@@ -1661,20 +1648,6 @@ function main2()
 
 
 
-  function time()
-    hb()
-  end
-  function hb(十二)
-    asp.setText(os.date("%H:%M | %d-%m-%Y"))
-  end
-  function Refresh()
-    require("import")
-    while true do
-      Thread.sleep(100)
-      call("time")
-    end
-  end
-  thread(Refresh)
 
 
   model.setText(""..Build.MODEL)
@@ -1692,30 +1665,6 @@ function main2()
     --noroot.setChecked(true)
   end
 
-
-  LayoutVIP4=activity.getSystemService(Context.WINDOW_SERVICE)
-  HasFocus=false
-  WmHz4 =WindowManager.LayoutParams()
-  if Build.VERSION.SDK_INT >= 26 then WmHz4.type =WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
-   else WmHz4.type =WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
-  end
-  import "android.graphics.PixelFormat"
-  WmHz4.format =PixelFormat.RGBA_8888
-  WmHz4.flags=WindowManager.LayoutParams().FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
-  WmHz4.gravity = Gravity.CENTER| Gravity.BOTTOM
-  WmHz4.x = 0
-  WmHz4.y = 0
-  minWindow6 = loadlayout(textfloating)
-
-  function Win_minWindow6()
-    if isMax==false then
-      isMax=true
-      LayoutVIP4.addView(minWindow6,WmHz4)
-     else
-      isMax=false
-      LayoutVIP4.removeView(minWindow6)
-    end
-  end
 
 
   LayoutVIP=activity.getSystemService(Context.WINDOW_SERVICE)
@@ -1807,7 +1756,6 @@ function main2()
     if isMax==true && OpenM==true then
       isMax=false OpenM=false
       LayoutVIP.removeView(mainWindow)
-      LayoutVIP4.removeView(minWindow6)
     end
   end
 
@@ -1822,7 +1770,6 @@ function main2()
     if isMax==false then
       isMax=true
       LayoutVIP1.addView(minWindow,A3params1)
-      LayoutVIP4.addView(minWindow6,WmHz4)
      else
       TOASTTXT("CHEAT IS RUNNING !!")
     end
@@ -1836,7 +1783,6 @@ function main2()
      elseif isMax==true && OpenM==false then
       isMax=false
       LayoutVIP1.removeView(minWindow)
-      LayoutVIP4.removeView(minWindow6)
      else
       TOASTTXT("CHEAT NOT RUNNING !!")
     end
@@ -1870,7 +1816,7 @@ function main2()
   end
 
   exit.onClick=function()
-    activity.finish()
+  os.exit()
   end
 
 
