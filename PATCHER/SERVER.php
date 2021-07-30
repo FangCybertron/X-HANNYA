@@ -13,10 +13,27 @@ import "android.content.pm.PackageManager"
 import "android.graphics.PixelFormat"
 import "android.graphics.Typeface"
 import "android.content.Context"
+  require "import"
+  import "android.app.*"
+  import "android.os.*"
+  import "android.widget.*"
+  import "android.view.*"
+  import "android.graphics.drawable.BitmapDrawable"
+  import "android.graphics.PorterDuff"
+  import "android.graphics.PorterDuffColorFilter"
+  import "android.content.Context"
+  import "android.content.Intent"
+  import "android.net.Uri"
+  import "android.provider.Settings"
+  import "com.androlua.util.RootUtil"
+  import "android.graphics.Typeface"
+  local root=RootUtil()
+
+
+
 
 
 LAYOUTVIP={
-
   LinearLayout;
   backgroundColor="0xFF202428";
   layout_width="fill";
@@ -361,22 +378,6 @@ rememberme.setVisibility(LinearLayout.VISIBLE)
 
 
 function main2()
-  require "import"
-  import "android.app.*"
-  import "android.os.*"
-  import "android.widget.*"
-  import "android.view.*"
-  import "android.graphics.drawable.BitmapDrawable"
-  import "android.graphics.PorterDuff"
-  import "android.graphics.PorterDuffColorFilter"
-  import "android.content.Context"
-  import "android.content.Intent"
-  import "android.net.Uri"
-  import "android.provider.Settings"
-  import "com.androlua.util.RootUtil"
-  import "android.graphics.Typeface"
-  local root=RootUtil()
-
 
   if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
     intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
