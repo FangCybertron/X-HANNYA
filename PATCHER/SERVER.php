@@ -16,6 +16,14 @@ import "android.content.Context"
 
 
 
+  if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
+    intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
+    TOASTTXT("Application Require Permission")
+    return
+  end
+
+
+
 LAYOUTVIP={
   LinearLayout;
   backgroundColor="0xFF202428";
@@ -379,11 +387,6 @@ function main2()
   local root=RootUtil()
 
 
-  if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
-    intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
-    TOASTTXT("Application Require Permission")
-    return
-  end
 
   os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
   io.open("/storage/emulated/0/XHP-PROJECT/JOIN TELEGRAM @xhp_project", "w+")
