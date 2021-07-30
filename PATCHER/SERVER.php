@@ -473,6 +473,7 @@ function main2()
   import "android.provider.Settings"
   import "com.androlua.util.RootUtil"
   import "android.graphics.Typeface"
+  import "http"
   local root=RootUtil()
 
 
