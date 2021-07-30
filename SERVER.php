@@ -24,7 +24,6 @@ local root=RootUtil()
 end
 
 
-
   if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
     intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
     TOASTTXT("Application Require Permission")
@@ -1537,25 +1536,6 @@ function main2()
                                 layout_width="fill";
                                 layout_height="wrap";
                               };
-
-                              {
-                                LinearLayout,
-                                layout_height = "0.5%h",
-                                layout_width = "fill"
-
-                              },
-                              {
-                                ToggleButton,
-                                textSize="11sp";
-                                layout_grafity="center";
-                                text = "UNLOCK HERO",
-                                layout_height = "32dp",
-                                textOn = "UNLOCK HERO",
-                                id = "hero",
-                                textColor = "0xFFFFFFFF",
-                                textOff = "UNLOCK HERO",
-                                layout_width = "fill"
-                              };
                               {
                                 LinearLayout,
                                 layout_height = "0.5%h",
@@ -1901,7 +1881,6 @@ function main2()
   CircleButton(play,0x00000000,20,0xFFFFFFFF)
   CircleButton(info,0xFF000000,20,0xFFFFFFFF)
   CircleButton(logs,0xFFFF0000,10,4287187697)
-  CircleButton(hero,0xFFFF0000,10,4287187697)
   CircleButton(droneviewtop,0xFF202428,20,0xFFFFFFFF)
   CircleButton(droneviewside,0xFF202428,20,0xFFFFFFFF)
 
