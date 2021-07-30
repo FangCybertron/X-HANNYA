@@ -1,1 +1,1 @@
-【S】fuckbug【S】
+【S】saynocheat【S】
