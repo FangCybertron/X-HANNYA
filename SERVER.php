@@ -17,6 +17,7 @@ import "android.graphics.drawable.BitmapDrawable"
 import "android.graphics.PorterDuff"
 import "android.graphics.PorterDuffColorFilter"
 import "android.graphics.Typeface"
+import "com.androlua.util.RootUtil"
 local root=RootUtil()
 
 
