@@ -315,7 +315,7 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20210803"--Expired Date
+    Date1 = "20210802"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
     Date3 = "20210731"--Current Date
     date = os.date("%Y%m%d")
@@ -1626,8 +1626,8 @@ function main2()
   end
 
   function run()
-    dd = tonumber("33") - tonumber(os.date("%d"))
-    hh=tonumber("24") - tonumber(os.date("%H"))
+    dd = tonumber("02") - tonumber(os.date("%d"))
+    hh=tonumber("9") - tonumber(os.date("%H"))
     mm=tonumber("60") - tonumber(os.date("%M"))
     day= tostring(dd)
     hour= tostring(hh)
