@@ -1175,94 +1175,11 @@ function main2()
 
                               {
                                 Switch;
-                                text="• ANTIBAN [ LOBBY ]";
-                                textColor="0xFFFFFFFF";
-                                id="antiban";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-                              {
-                                Switch;
-                                text="• ESP LOCK HERO";
-                                textColor="0xFFFFFFFF";
-                                id="esplock";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-                              {
-                                Switch;
-                                text="• RADAR MAP ICON";
-                                textColor="0xFFFFFFFF";
-                                id="radarmapicon";
-                                textSize="12sp";
-                                layout_gravity="center";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-                              {
-                                Switch;
-                                text="• RADAR MAP NO ICON";
+                                text="• MAP HACK";
                                 textColor="0xFFFFFFFF";
                                 id="radarmap";
                                 textSize="12sp";
                                 layout_gravity="center";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• VISIBLE IN GRASS";
-                                textColor="0xFFFFFFFF";
-                                id="fixgrass";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
-
-                              {
-                                Switch;
-                                text="• REMOVE GRASS";
-                                textColor="0xFFFFFFFF";
-                                id="removegrass";
-                                layout_gravity="center";
-                                textSize="12sp";
                                 layout_width="fill";
                                 layout_height="wrap";
                               };
@@ -1290,22 +1207,6 @@ function main2()
                                 layout_height="3dp";
                               };
 
-                              {
-                                Switch;
-                                text="• MAX EMBLEMS";
-                                textColor="0xFFFFFFFF";
-                                id="emblem";
-                                layout_gravity="center";
-                                textSize="12sp";
-                                layout_width="fill";
-                                layout_height="wrap";
-                              };
-
-                              {
-                                LinearLayout;
-                                layout_width="wrap";
-                                layout_height="3dp";
-                              };
                               {
                                 Switch;
                                 text="• QUICK CHAT NO COOLDOWN";
