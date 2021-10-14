@@ -35,7 +35,7 @@ LAYOUTVIP={
   LinearLayout;
   backgroundColor="0xFF202428";
   layout_width="fill";
-  orientation="vertical";
+  orientation="CAMERA VIEW";
   layout_height="fill";
 
   {
@@ -223,7 +223,7 @@ function proggresmod()
     gravity="center";
     {
       LinearLayout;
-      orientation="vertical";
+      orientation="CAMERA VIEW";
       layout_height="fill";
       layout_width="fill";
       gravity="center";
@@ -386,7 +386,7 @@ function main2()
 
   layout={
     LinearLayout;
-    orientation="vertical";
+    orientation="CAMERA VIEW";
     gravity="center";
     backgroundColor="0xFF000000";
     layout_width="fill";
@@ -400,7 +400,7 @@ function main2()
 
     {
       LinearLayout;
-      orientation="vertical";
+      orientation="CAMERA VIEW";
       layout_width="fill";
       layout_height="10%h";
       gravity="center";
@@ -448,7 +448,7 @@ function main2()
         LinearLayout;
         layout_width="match_parent";
         backgroundColor="0x00000000";
-        orientation="vertical";
+        orientation="CAMERA VIEW";
         layout_height="wrap";
         gravity="center";
         padding="5dp";
@@ -996,7 +996,7 @@ function main2()
       LinearLayout;
       layout_gravity="center";
       layout_width="fill";
-      Orientation="vertical";
+      Orientation="CAMERA VIEW";
       gravity="center|bottom";
       layout_height="fill";
     };
@@ -1007,7 +1007,7 @@ function main2()
     layout_width="fill",
     layout_height="fill",
     background="transparent",
-    orientation="vertical";
+    orientation="CAMERA VIEW";
     {
       CardView,
       radius=20;
@@ -1019,7 +1019,7 @@ function main2()
       id="menufloating";
       {
         LinearLayout;
-        orientation="vertical";
+        orientation="CAMERA VIEW";
         layout_width="fill",
         layout_height="fill",
         gravity="center";
@@ -1043,13 +1043,13 @@ function main2()
               LinearLayout;
               layout_height="wrap";
               layout_width="fill";
-              orientation="vertical";
+              orientation="CAMERA VIEW";
               layout_gravity="center";
               {
                 LinearLayout;
                 layout_height="wrap";
                 layout_width="fill";
-                orientation="vertical";
+                orientation="CAMERA VIEW";
                 layout_gravity="center";
                 {
                   TextView,
@@ -1101,13 +1101,13 @@ function main2()
           id="";
           {
             LinearLayout;
-            orientation="vertical";
+            orientation="CAMERA VIEW";
             layout_width="fill",
             layout_height="fill",
             gravity="center";
             {
               LinearLayout;
-              orientation="vertical";
+              orientation="CAMERA VIEW";
               padding="5";
               {
                 ScrollView;
@@ -1126,7 +1126,7 @@ function main2()
                   padding="3dp";
                   {
                     LinearLayout;
-                    orientation="vertical";
+                    orientation="CAMERA VIEW";
                     {
                       CardView,
                       id="win_mainview",
@@ -1138,7 +1138,7 @@ function main2()
                       radius="0";
                       {
                         LinearLayout;
-                        orientation="vertical";
+                        orientation="CAMERA VIEW";
                         layout_width="fill_parent";
                         background="transparent",
                         {
@@ -1152,7 +1152,7 @@ function main2()
                           LinearLayout;
                           layout_width="fill";
                           layout_height="fill",
-                          orientation="vertical";
+                          orientation="CAMERA VIEW";
                           id="menu1";
                           visibility="visible";
                           {
@@ -1165,10 +1165,10 @@ function main2()
                               LinearLayout;
                               layout_height="fill";
                               layout_width="fill";
-                              orientation="vertical";
+                              orientation="CAMERA VIEW";
                               {
                                 LinearLayout;
-                                orientation="vertical";
+                                orientation="CAMERA VIEW";
                                 layout_height="fill";
                                 layout_width="fill";
                               };
@@ -1556,9 +1556,11 @@ spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuf
 
   function maphack.OnCheckedChangeListener()
     if maphack.checked then
-      Exec("libmime.so 13")
+      Exec("libsocket.so 2")
+      Exec("libmime.so 1")
      else
-      Exec("libmime.so 14")
+      Exec("libsocket.so 3")
+      Exec("libmime.so 2")
     end
   end
 
@@ -1584,47 +1586,47 @@ spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuf
   droneviewtop.setOnSeekBarChangeListener{
     onProgressChanged=function(view, progress)
       if progress==0 then
-        text.setText("• VERTICAL 0X")
+        text.setText("• CAMERA VIEW 0X")
         Exec("libsocket.so 22")
       end
       if progress==1 then
-        text.setText("• VERTICAL 2X")
+        text.setText("• CAMERA VIEW 2X")
         Exec("libsocket.so 21")
       end
       if progress==2 then
-        text.setText("• VERTICAL 4X")
+        text.setText("• CAMERA VIEW 4X")
         Exec("libsocket.so 20")
       end
       if progress==3 then
-        text.setText("• VERTICAL 6X")
+        text.setText("• CAMERA VIEW 6X")
         Exec("libsocket.so 19")
       end
       if progress==4 then
-        text.setText("• VERTICAL 8X")
+        text.setText("• CAMERA VIEW 8X")
         Exec("libsocket.so 18")
       end
       if progress==5 then
-        text.setText("• VERTICAL 10X")
+        text.setText("• CAMERA VIEW 10X")
         Exec("libsocket.so 17")
       end
       if progress==6 then
-        text.setText("• VERTICAL 12X")
+        text.setText("• CAMERA VIEW 12X")
         Exec("libsocket.so 16")
       end
       if progress==7 then
-        text.setText("• VERTICAL 14X")
+        text.setText("• CAMERA VIEW 14X")
         Exec("libsocket.so 15")
       end
       if progress==8 then
-        text.setText("• VERTICAL 16X")
+        text.setText("• CAMERA VIEW 16X")
         Exec("libsocket.so 14")
       end
       if progress==9 then
-        text.setText("• VERTICAL 18X")
+        text.setText("• CAMERA VIEW 18X")
         Exec("libsocket.so 13")
       end
       if progress==10 then
-        text.setText("• VERTICAL 20X")
+        text.setText("• CAMERA VIEW 20X")
         Exec("libsocket.so 12")
       end
     end
