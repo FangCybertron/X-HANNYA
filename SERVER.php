@@ -1223,23 +1223,20 @@ function main2()
                                 layout_height = "0.4%h",
                                 layout_width = "fill"
                               },
+        
+
 
                               {
                                 TextView;
                                 id="text";
                                 layout_width="wrap_content";
                                 layout_height="wrap_content";
-                                text="• VERTICAL 0 X";
+                                text="• CAMERA VIEW 0 X";
                                 textColor="0xFFFFFFFF";
                                 textSize="12sp";
                               };
-                              {
-                                CardView;
-                                layout_width = "fill",
-                                radius="20";
-                                layout_height = "wrap",
-                                layout_gravity = "center",
-                                backgroundColor = "0xFF202428",
+ 
+                 
                                 {
                                   SeekBar;
                                   id="droneviewtop";
@@ -1248,17 +1245,12 @@ function main2()
                                   max="10";
                                   progress="0";
                                 };
-                              };
+                              
 
 
 
 
-
-                              {
-                                LinearLayout,
-                                layout_height = "0.5%h",
-                                layout_width = "fill"
-                              },
+      
                               {
                                 ToggleButton,
                                 typeface=Typeface.DEFAULT_BOLD,
@@ -1540,27 +1532,14 @@ function main2()
   CircleButton(play,0x00000000,20,0xFFFFFFFF)
   CircleButton(info,0xFF000000,20,0xFFFFFFFF)
   CircleButton(logs,0xFFFF0000,10,4287187697)
-  CircleButton(droneviewtop,0xFF202428,20,0xFFFFFFFF)
-  CircleButton(droneviewside,0xFF202428,20,0xFFFFFFFF)
+  
 
 
   --SeekBar
 droneviewtop.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
-droneviewside.ProgressDrawable.setColorFilter(PorterDuffColorFilter(0xFFFF0000,PorterDuff.Mode.SRC_ATOP))
-radarmapicon.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-radarmap.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-attackspeed.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-wallhack.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-autospawn.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-unlockskin.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-emblem.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-fixgrass.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-removegrass.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
+maphack.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
 hidename.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
 spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-skillnocd.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-esplock.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
-antiban.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff.Mode.SRC_ATOP));
 
 
   function Exec(one)
@@ -1575,76 +1554,15 @@ antiban.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff
   end
 
 
-  function radarmapicon.OnCheckedChangeListener()
-    if radarmapicon.checked then
+  function maphack.OnCheckedChangeListener()
+    if maphack.checked then
       Exec("libmime.so 13")
      else
       Exec("libmime.so 14")
     end
   end
 
-  function attackspeed.OnCheckedChangeListener()
-    if attackspeed.checked then
-      Exec("libmime.so 11")
-     else
-      Exec("libmime.so 12")
-    end
-  end
-
-  function wallhack.OnCheckedChangeListener()
-    if wallhack.checked then
-      Exec("libmime.so 7")
-     else
-      Exec("libmime.so 8")
-    end
-  end
-
-
-  function autospawn.OnCheckedChangeListener()
-    if autospawn.checked then
-      Exec("libmime.so 9")
-     else
-      Exec("libmime.so 10")
-    end
-  end
-
-
-  function unlockskin.OnCheckedChangeListener()
-    if unlockskin.checked then
-      Exec("libmime.so 5")
-     else
-      Exec("libmime.so 6")
-    end
-  end
-
-
-  function emblem.OnCheckedChangeListener()
-    if emblem.checked then
-      Exec("libmime.so 3")
-     else
-      Exec("libmime.so 4")
-    end
-  end
-
-
-  function fixgrass.OnCheckedChangeListener()
-    if fixgrass.checked then
-      Exec("libmime.so 1")
-     else
-      Exec("libmime.so 2")
-    end
-  end
-
-
-  function removegrass.OnCheckedChangeListener()
-    if removegrass.checked then
-      Exec("libcjson.so 1")
-     else
-      Exec("libcjson.so 2")
-    end
-  end
-
-
+  
   function hidename.OnCheckedChangeListener()
     if hidename.checked then
       Exec("libcjson.so 3 ")
@@ -1654,38 +1572,11 @@ antiban.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff
   end
 
 
-  function radarmap.OnCheckedChangeListener()
-    if radarmap.checked then
-      Exec("libsocket.so 2")
-     else
-      Exec("libsocket.so 3")
-    end
-  end
-
-
   function spamchat.OnCheckedChangeListener()
     if spamchat.checked then
       Exec("libsocket.so 6")
      else
       Exec("libsocket.so 7")
-    end
-  end
-
-
-  function skillnocd.OnCheckedChangeListener()
-    if skillnocd.checked then
-      Exec("libsocket.so 8")
-     else
-      Exec("libsocket.so 9")
-    end
-  end
-
-
-  function esplock.OnCheckedChangeListener()
-    if esplock.checked then
-      Exec("libsocket.so 30")
-     else
-      Exec("libsocket.so 31")
     end
   end
 
@@ -1740,110 +1631,6 @@ antiban.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff
   }
 
 
-  droneviewside.setOnSeekBarChangeListener{
-    onProgressChanged=function(view, progress)
-      if progress==0 then
-        text2.setText("• HORIZONTAL 0X")
-        Exec("libsocket.so 42")
-      end
-      if progress==1 then
-        text2.setText("• HORIZONTAL 2X")
-        Exec("libsocket.so  41")
-      end
-      if progress==2 then
-        text2.setText("• HORIZONTAL 4X")
-        Exec("libsocket.so 40")
-      end
-      if progress==3 then
-        text2.setText("• HORIZONTAL 6X")
-        Exec("libsocket.so 39")
-      end
-      if progress==4 then
-        text2.setText("• HORIZONTAL 8X")
-        Exec("libsocket.so 38")
-      end
-      if progress==5 then
-        text2.setText("• HORIZONTAL 10X")
-        Exec("libsocket.so 37")
-      end
-      if progress==6 then
-        text2.setText("• HORIZONTAL 12X")
-        Exec("libsocket.so 36")
-      end
-      if progress==7 then
-        text2.setText("• HORIZONTAL 14X")
-        Exec("libsocket.so 35")
-      end
-      if progress==8 then
-        text2.setText("• HORIZONTAL 16X")
-        Exec("libsocket.so 34")
-      end
-      if progress==9 then
-        text2.setText("• HORIZONTAL 18X")
-        Exec("libsocket.so 33")
-      end
-      if progress==10 then
-        text2.setText("• HORIZONTAL 20X")
-        Exec("libsocket.so 32")
-      end
-    end
-  }
-
-
-  function antiban.OnCheckedChangeListener()
-    if antiban.checked then
-      import "java.io.File"--导入File类
-      File("storage/emulated/0/Android/data/com.mobile.legends/cache").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/UnityCache").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA1"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/FightHistory").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/LiveSawHistory.bin").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin"))
-
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ActivityBugReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ActivityBugReport.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_BattleExperienceReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_BattleExperienceReport.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_CountryBattle_Report.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_CountryBattle_Report.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_HistoryRecordListItemReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_HistoryRecordListItemReport.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_LiveReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_LiveReport.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_Report.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_Report.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_Report_BattleEnd_MC.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_Report_BattleEnd_MC.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ReportDetails.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ReportDetails.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ReportNew.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ReportNew.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page0.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page0.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page1.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page1.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page2.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page2.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d_X-HANNYA"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d_X-HANNYA"))
-     else
-      import "java.io.File"--导入File类
-      File("storage/emulated/0/Android/data/com.mobile.legends/X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/cache"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/UnityCache"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA1").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/X-HANNYA2").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/FightHistory"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/X-HANNYA.bin").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/android/LiveSawHistory.bin"))
-
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ActivityBugReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ActivityBugReport.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_BattleExperienceReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_BattleExperienceReport.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_CountryBattle_Report.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_CountryBattle_Report.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_HistoryRecordListItemReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_HistoryRecordListItemReport.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_LiveReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_LiveReport.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_Report.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_Report.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_Report_BattleEnd_MC.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_Report_BattleEnd_MC.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ReportDetails.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ReportDetails.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ReportNew.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_ReportNew.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page0.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page0.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page1.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page1.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page2.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page2.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_SeasonReport_page3.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_WarReport.unity3d"))
-      File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d_X-HANNYA").renameTo(File("storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/UI/android/UI_YesterdayWarReport.unity3d"))
-    end
-  end
- 
-
-
   function logs.onClick()
     if logs.checked then
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/cache/")
@@ -1861,6 +1648,4 @@ antiban.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuff
       TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
     end
   end
-
-
 end
