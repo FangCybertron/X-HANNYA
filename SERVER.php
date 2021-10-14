@@ -35,7 +35,7 @@ LAYOUTVIP={
   LinearLayout;
   backgroundColor="0xFF202428";
   layout_width="fill";
-  orientation="CAMERA VIEW";
+  orientation="vertical";
   layout_height="fill";
 
   {
@@ -223,7 +223,7 @@ function proggresmod()
     gravity="center";
     {
       LinearLayout;
-      orientation="CAMERA VIEW";
+      orientation="vertical";
       layout_height="fill";
       layout_width="fill";
       gravity="center";
@@ -315,7 +315,7 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20211216"--Expired Date
+    Date1 = "20211017"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
     Date3 = "20211014"--Current Date
     date = os.date("%Y%m%d")
@@ -386,7 +386,7 @@ function main2()
 
   layout={
     LinearLayout;
-    orientation="CAMERA VIEW";
+    orientation="vertical";
     gravity="center";
     backgroundColor="0xFF000000";
     layout_width="fill";
@@ -400,7 +400,7 @@ function main2()
 
     {
       LinearLayout;
-      orientation="CAMERA VIEW";
+      orientation="vertical";
       layout_width="fill";
       layout_height="10%h";
       gravity="center";
@@ -448,7 +448,7 @@ function main2()
         LinearLayout;
         layout_width="match_parent";
         backgroundColor="0x00000000";
-        orientation="CAMERA VIEW";
+        orientation="vertical";
         layout_height="wrap";
         gravity="center";
         padding="5dp";
@@ -996,7 +996,7 @@ function main2()
       LinearLayout;
       layout_gravity="center";
       layout_width="fill";
-      Orientation="CAMERA VIEW";
+      Orientation="vertical";
       gravity="center|bottom";
       layout_height="fill";
     };
@@ -1007,7 +1007,7 @@ function main2()
     layout_width="fill",
     layout_height="fill",
     background="transparent",
-    orientation="CAMERA VIEW";
+    orientation="vertical";
     {
       CardView,
       radius=20;
@@ -1019,7 +1019,7 @@ function main2()
       id="menufloating";
       {
         LinearLayout;
-        orientation="CAMERA VIEW";
+        orientation="vertical";
         layout_width="fill",
         layout_height="fill",
         gravity="center";
@@ -1043,13 +1043,13 @@ function main2()
               LinearLayout;
               layout_height="wrap";
               layout_width="fill";
-              orientation="CAMERA VIEW";
+              orientation="vertical";
               layout_gravity="center";
               {
                 LinearLayout;
                 layout_height="wrap";
                 layout_width="fill";
-                orientation="CAMERA VIEW";
+                orientation="vertical";
                 layout_gravity="center";
                 {
                   TextView,
@@ -1101,13 +1101,13 @@ function main2()
           id="";
           {
             LinearLayout;
-            orientation="CAMERA VIEW";
+            orientation="vertical";
             layout_width="fill",
             layout_height="fill",
             gravity="center";
             {
               LinearLayout;
-              orientation="CAMERA VIEW";
+              orientation="vertical";
               padding="5";
               {
                 ScrollView;
@@ -1126,7 +1126,7 @@ function main2()
                   padding="3dp";
                   {
                     LinearLayout;
-                    orientation="CAMERA VIEW";
+                    orientation="vertical";
                     {
                       CardView,
                       id="win_mainview",
@@ -1138,7 +1138,7 @@ function main2()
                       radius="0";
                       {
                         LinearLayout;
-                        orientation="CAMERA VIEW";
+                        orientation="vertical";
                         layout_width="fill_parent";
                         background="transparent",
                         {
@@ -1152,7 +1152,7 @@ function main2()
                           LinearLayout;
                           layout_width="fill";
                           layout_height="fill",
-                          orientation="CAMERA VIEW";
+                          orientation="vertical";
                           id="menu1";
                           visibility="visible";
                           {
@@ -1165,10 +1165,10 @@ function main2()
                               LinearLayout;
                               layout_height="fill";
                               layout_width="fill";
-                              orientation="CAMERA VIEW";
+                              orientation="vertical";
                               {
                                 LinearLayout;
-                                orientation="CAMERA VIEW";
+                                orientation="vertical";
                                 layout_height="fill";
                                 layout_width="fill";
                               };
@@ -1178,7 +1178,7 @@ function main2()
                                 text="• MAP HACK";
                                 textColor="0xFFFFFFFF";
                                 id="radarmap";
-                                textSize="12sp";
+                                textSize="10sp";
                                 layout_gravity="center";
                                 layout_width="fill";
                                 layout_height="wrap";
@@ -1196,7 +1196,7 @@ function main2()
                                 textColor="0xFFFFFFFF";
                                 id="hidename";
                                 layout_gravity="center";
-                                textSize="12sp";
+                                textSize="10sp";
                                 layout_width="fill";
                                 layout_height="wrap";
                               };
@@ -1213,16 +1213,16 @@ function main2()
                                 textColor="0xFFFFFFFF";
                                 id="spamchat";
                                 layout_gravity="center";
-                                textSize="12sp";
+                                textSize="10sp";
                                 layout_width="fill";
                                 layout_height="wrap";
                               };
 
                               {
-                                LinearLayout,
-                                layout_height = "0.4%h",
-                                layout_width = "fill"
-                              },
+                                LinearLayout;
+                                layout_width="wrap";
+                                layout_height="6dp";
+                              };
         
 
 
@@ -1233,7 +1233,7 @@ function main2()
                                 layout_height="wrap_content";
                                 text="• CAMERA VIEW 0 X";
                                 textColor="0xFFFFFFFF";
-                                textSize="12sp";
+                                textSize="10sp";
                               };
  
                  
@@ -1247,7 +1247,11 @@ function main2()
                                 };
                               
 
-
+                              {
+                                LinearLayout;
+                                layout_width="wrap";
+                                layout_height="6dp";
+                              };
 
 
       
@@ -1278,7 +1282,6 @@ function main2()
       };
     };
   };
-
   icon={
     LinearLayout;
     layout_height="fill";
@@ -1651,3 +1654,4 @@ spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuf
     end
   end
 end
+
