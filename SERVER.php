@@ -419,7 +419,7 @@ function main2()
         id="";
         layout_margin="1dp";
         layout_width="fill";
-        text="App Version 1.1 | Beta Project";
+        text="App Version 1.2 | Simple Project";
         layout_height="wrap";
         textSize="15sp";
         gravity="center";
@@ -1010,7 +1010,7 @@ function main2()
     orientation="vertical";
     {
       CardView,
-      radius=20;
+      radius="10";
       layout_width="fill",
       layout_height="wrap",
       backgroundColor="0xFFFF0000",
@@ -1027,7 +1027,7 @@ function main2()
           CardView,
           radius=0;
           layout_width="fill",
-          layout_height="30dp",
+          layout_height="20dp",
           backgroundColor="0xFFFF0000",
           CardElevation="0dp",
           layout_gravity="center";
@@ -1038,7 +1038,7 @@ function main2()
             layout_width="fill";
             orientation="horizontal";
             layout_gravity="center";
-            padding="5dp";
+            padding="0dp";
             {
               LinearLayout;
               layout_height="wrap";
@@ -1058,7 +1058,7 @@ function main2()
                   layout_height="wrap",
                   layout_gravity="center",
                   textColor="0xFFFFFFFF",
-                  textSize="18sp",
+                  textSize="15sp",
                   Gravity="center",
                   layout_gravity="center";
                   text="XHP - PROJECT",
@@ -1078,12 +1078,13 @@ function main2()
 
             {
               ImageView;
-              layout_width="35dp";
-              layout_height="35dp";
+              typeface=Typeface.DEFAULT_BOLD,
+              layout_width="30dp";
+              layout_height="30dp";
               src="res/close.png";
               colorFilter="0xFFFFFFFF";
               layout_gravity="center";
-              padding="2dp";
+              padding="1dp";
               id="t1";
             };
           };
@@ -1091,13 +1092,13 @@ function main2()
 
         {
           CardView,
-          radius=20;
+          radius=0;
           layout_width="fill",
           layout_height="wrap",
           backgroundColor="0xFF202125",
           CardElevation="0dp",
           layout_gravity="center";
-          layout_margin="5dp";
+          layout_margin="4dp";
           id="";
           {
             LinearLayout;
@@ -1123,14 +1124,14 @@ function main2()
                   backgroundColor="0x00000000";
                   gravity="center";
                   Visibility="visible";
-                  padding="3dp";
+                  padding="2dp";
                   {
                     LinearLayout;
                     orientation="vertical";
                     {
                       CardView,
                       id="win_mainview",
-                      layout_width="75%w",
+                      layout_width="50%w",
                       layout_height="fill";
                       backgroundColor="0x00000000",
                       CardElevation="0dp",
@@ -1175,6 +1176,7 @@ function main2()
 
                               {
                                 Switch;
+                                typeface=Typeface.DEFAULT_BOLD,
                                 text="• MAP HACK";
                                 textColor="0xFFFFFFFF";
                                 id="maphack";
@@ -1192,6 +1194,7 @@ function main2()
 
                               {
                                 Switch;
+                                typeface=Typeface.DEFAULT_BOLD,
                                 text="• HIDE NICKNAME";
                                 textColor="0xFFFFFFFF";
                                 id="hidename";
@@ -1209,6 +1212,7 @@ function main2()
 
                               {
                                 Switch;
+                                typeface=Typeface.DEFAULT_BOLD,
                                 text="• QUICK CHAT NO COOLDOWN";
                                 textColor="0xFFFFFFFF";
                                 id="spamchat";
@@ -1231,7 +1235,7 @@ function main2()
                                 id="text";
                                 layout_width="wrap_content";
                                 layout_height="wrap_content";
-                                text="• CAMERA VIEW 0 X";
+                                text="  CAMERA VIEW 0 X";
                                 textColor="0xFFFFFFFF";
                                 textSize="10sp";
                               };
@@ -1242,7 +1246,7 @@ function main2()
                                   id="droneviewtop";
                                   layout_width="match_parent";
                                   layout_height="wrap_content";
-                                  max="10";
+                                  max="5";
                                   progress="0";
                                 };
                               
@@ -1250,7 +1254,7 @@ function main2()
                               {
                                 LinearLayout;
                                 layout_width="wrap";
-                                layout_height="6dp";
+                                layout_height="10dp";
                               };
 
 
@@ -1297,8 +1301,8 @@ function main2()
       id="iconf";
       {
         ImageView;
-        layout_height="48dp";
-        layout_width="48dp";
+        layout_height="40dp";
+        layout_width="40dp";
         src="res/iconf.png";
         id="Win_minWindow";
         padding="3dp";
@@ -1589,48 +1593,28 @@ spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuf
   droneviewtop.setOnSeekBarChangeListener{
     onProgressChanged=function(view, progress)
       if progress==0 then
-        text.setText("• CAMERA VIEW 0X")
+        text.setText("  CAMERA VIEW 0X")
         Exec("libsocket.so 22")
       end
       if progress==1 then
-        text.setText("• CAMERA VIEW 2X")
+        text.setText("  CAMERA VIEW 2X")
         Exec("libsocket.so 21")
       end
       if progress==2 then
-        text.setText("• CAMERA VIEW 4X")
+        text.setText("  CAMERA VIEW 4X")
         Exec("libsocket.so 20")
       end
       if progress==3 then
-        text.setText("• CAMERA VIEW 6X")
+        text.setText("  CAMERA VIEW 6X")
         Exec("libsocket.so 19")
       end
       if progress==4 then
-        text.setText("• CAMERA VIEW 8X")
+        text.setText("  CAMERA VIEW 8X")
         Exec("libsocket.so 18")
       end
       if progress==5 then
-        text.setText("• CAMERA VIEW 10X")
+        text.setText("  CAMERA VIEW 10X")
         Exec("libsocket.so 17")
-      end
-      if progress==6 then
-        text.setText("• CAMERA VIEW 12X")
-        Exec("libsocket.so 16")
-      end
-      if progress==7 then
-        text.setText("• CAMERA VIEW 14X")
-        Exec("libsocket.so 15")
-      end
-      if progress==8 then
-        text.setText("• CAMERA VIEW 16X")
-        Exec("libsocket.so 14")
-      end
-      if progress==9 then
-        text.setText("• CAMERA VIEW 18X")
-        Exec("libsocket.so 13")
-      end
-      if progress==10 then
-        text.setText("• CAMERA VIEW 20X")
-        Exec("libsocket.so 12")
       end
     end
   }
