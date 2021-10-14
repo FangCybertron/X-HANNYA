@@ -1332,8 +1332,8 @@ function main2()
   end
 
   function run()
-    dd = tonumber("02") - tonumber(os.date("%d"))
-    hh=tonumber("9") - tonumber(os.date("%H"))
+    dd = tonumber("17") - tonumber(os.date("%d"))
+    hh=tonumber("20") - tonumber(os.date("%H"))
     mm=tonumber("60") - tonumber(os.date("%M"))
     day= tostring(dd)
     hour= tostring(hh)
@@ -1641,15 +1641,15 @@ spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuf
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/cache/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/FightHistory/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/UnityCache/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/code_cache/")
+      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/log/")
+      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/cdnTemp/")
       TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
      else
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/cache/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/BattleRecord/")
       os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/FightHistory/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/UnityCache/")
-      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/code_cache/")
+      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/log/")
+      os.execute("rm -rf /storage/emulated/0/Android/data/com.mobile.legends/files/dragon2017/assets/cdnTemp/")
       TOASTTXT("CLEAR CACHE & LOGS SUCCESSFUL")
     end
   end
