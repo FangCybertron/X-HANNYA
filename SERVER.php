@@ -352,7 +352,7 @@ function btnLogin.onClick()
     save.putString("username",username)
     save.commit()
     proggresmod()
-    urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/PATCHER/key.php"
+    urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/key.php"
     Http.get(urla,nil,function(code,content)
       X.dismiss()
       AP=content:match("【S】(.-)【S】")
