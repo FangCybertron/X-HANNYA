@@ -1177,7 +1177,7 @@ function main2()
                                 Switch;
                                 text="• MAP HACK";
                                 textColor="0xFFFFFFFF";
-                                id="radarmap";
+                                id="maphack";
                                 textSize="10sp";
                                 layout_gravity="center";
                                 layout_width="fill";
