@@ -315,9 +315,9 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = ""--Expired Date
+    Date1 = "20211202"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
-    Date3 = ""--Current Date
+    Date3 = "20211014"--Current Date
     date = os.date("%Y%m%d")
     --------DATE1
     if date >= Date1 then
@@ -352,7 +352,7 @@ function btnLogin.onClick()
     save.putString("username",username)
     save.commit()
     proggresmod()
-    urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/key.php"
+    urla="https://raw.githubusercontent.com/missfangg/X-HANNYA/main/PATCHER/key.php"
     Http.get(urla,nil,function(code,content)
       X.dismiss()
       AP=content:match("【S】(.-)【S】")
