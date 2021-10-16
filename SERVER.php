@@ -18,10 +18,7 @@ import "android.graphics.PorterDuff"
 import "android.graphics.PorterDuffColorFilter"
 import "android.graphics.Typeface"
 import "com.androlua.util.RootUtil"
-local root=RootUtil()
-  if root.haveRoot()==true then
-  os.execute("su")
-end
+
 
 
   if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
@@ -378,6 +375,11 @@ rememberme.setVisibility(LinearLayout.VISIBLE)
 
 function main2()
 
+
+local root=RootUtil()
+  if root.haveRoot()==true then
+  os.execute("su")
+end
 
   os.execute("mkdir /storage/emulated/0/XHP-PROJECT")
   io.open("/storage/emulated/0/XHP-PROJECT/JOIN TELEGRAM @xhp_project", "w+")
@@ -1262,10 +1264,10 @@ function main2()
                               {
                                 ToggleButton,
                                 typeface=Typeface.DEFAULT_BOLD,
-                                textSize="11sp";
+                                textSize="9sp";
                                 layout_grafity="center";
                                 text = "CLEAR CACHE & LOGS",
-                                layout_height = "32dp",
+                                layout_height = "30dp",
                                 textOn = "CLEAR CACHE & LOGS",
                                 id = "logs",
                                 textColor = "0xFFFFFFFF",
