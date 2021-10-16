@@ -1375,10 +1375,7 @@ function main2()
 
   function start.onClick()
     Waterdropanimation(start,20)
-local root=RootUtil()
-  if root.haveRoot()==true then
-  os.execute("su")
-end
+    os.execute("su")
     if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
       intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
     end
@@ -1456,7 +1453,7 @@ spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuf
 
   function Exec(one)
     local two=activity.getApplicationInfo().nativeLibraryDir.."/"..(one)
-    if root.haveRoot()==true then
+    if RootUtil().haveRoot()==true then
       os.execute("su -c chmod 777 "..two)
       Runtime.getRuntime().exec("su -c "..two)
      else
