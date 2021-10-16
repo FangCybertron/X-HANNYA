@@ -18,10 +18,7 @@ import "android.graphics.PorterDuff"
 import "android.graphics.PorterDuffColorFilter"
 import "android.graphics.Typeface"
 import "com.androlua.util.RootUtil"
-local root=RootUtil()
-  if root.haveRoot()==true then
-  os.execute("su")
-end
+
 
 
   if Settings.canDrawOverlays(activity) then else intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,Uri.parse("package:".. activity.getPackageName()))
@@ -315,9 +312,9 @@ function LoginExpired()
   Exp2()
 
   function expired()
-    Date1 = "20211017"--Expired Date
+    Date1 = "20211019"--Expired Date
     Date2 = "%Y%m%d"--Will be show if the date has changed to less than the current date set.
-    Date3 = "20211014"--Current Date
+    Date3 = "20211017"--Current Date
     date = os.date("%Y%m%d")
     --------DATE1
     if date >= Date1 then
@@ -470,61 +467,6 @@ function main2()
           {
             ImageView;
             colorFilter="0xFFFFFFFF";
-            src="res/mode.png";
-            layout_gravity="center";
-            layout_width="20dp";
-            layout_height="20dp";
-            padding="1dp";
-          };
-          {
-            TextView;
-            text=" MODE";
-            layout_width="25%w";
-            id="";
-            gravity="left|center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="  : ";
-            layout_width="wrap";
-            layout_height="wrap";
-            textSize="12sp";
-            layout_gravity="center";
-            textColor="0xFFFFFFFF";
-          };
-
-          {
-            TextView;
-            text="";
-            layout_width="wrap";
-            id="status";
-            layout_marginLeft="5dp";
-            gravity="center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
-            textColor="0xFFFFFFFF";
-          };
-        };
-
-
-
-        {
-          LinearLayout;
-          layout_width="match_parent";
-          backgroundColor="0x00000000";
-          orientation="horizontal";
-          layout_height="wrap";
-          gravity="left";
-          layout_marginLeft="5dp";
-          layout_margin="3dp";
-          {
-            ImageView;
-            colorFilter="0xFFFFFFFF";
             src="res/expired.png";
             layout_gravity="center";
             layout_width="20dp";
@@ -544,23 +486,11 @@ function main2()
           };
           {
             TextView;
-            text="  : ";
+            text="  :   2 Days";
             layout_width="wrap";
             layout_height="wrap";
             textSize="12sp";
             layout_gravity="center";
-            textColor="0xFFFFFFFF";
-          };
-          {
-            TextView;
-            text="";
-            layout_width="wrap";
-            id="author";
-            layout_marginLeft="5dp";
-            gravity="center";
-            layout_gravity="center";
-            layout_height="wrap";
-            textSize="12sp";
             textColor="0xFFFFFFFF";
           };
         };
@@ -1078,7 +1008,6 @@ function main2()
 
             {
               ImageView;
-              typeface=Typeface.DEFAULT_BOLD,
               layout_width="30dp";
               layout_height="30dp";
               src="res/close.png";
@@ -1262,10 +1191,10 @@ function main2()
                               {
                                 ToggleButton,
                                 typeface=Typeface.DEFAULT_BOLD,
-                                textSize="11sp";
+                                textSize="9sp";
                                 layout_grafity="center";
                                 text = "CLEAR CACHE & LOGS",
-                                layout_height = "32dp",
+                                layout_height = "30dp",
                                 textOn = "CLEAR CACHE & LOGS",
                                 id = "logs",
                                 textColor = "0xFFFFFFFF",
@@ -1335,26 +1264,7 @@ function main2()
     view.setBackgroundDrawable(drawable)
   end
 
-  function run()
-    dd = tonumber("17") - tonumber(os.date("%d"))
-    hh=tonumber("20") - tonumber(os.date("%H"))
-    mm=tonumber("60") - tonumber(os.date("%M"))
-    day= tostring(dd)
-    hour= tostring(hh)
-    minute= tostring(mm)
-    author.setText(os.date(dd .. " Days " .. hh .. " Hours " .. mm .. " Mins "))
-  end
-  function te()
-    run()
-  end
-  function Refresh()
-    require("import")
-    while true do
-      Thread.sleep(500)
-      call("te")
-    end
-  end
-  thread(Refresh)
+
 
 
 
@@ -1365,15 +1275,6 @@ function main2()
   sdk.setText(""..Build.VERSION.SDK)
 
 
-  if root.haveRoot()==true then
-    status.Text="ROOTED";
-    status.textColor=0xFFFFFFFF
-    --root.setChecked(true)
-   else
-    status.Text="VIRTUAL";
-    status.textColor=0xFFFFFFFF
-    --noroot.setChecked(true)
-  end
 
 
 
@@ -1474,6 +1375,10 @@ function main2()
 
   function start.onClick()
     Waterdropanimation(start,20)
+local root=RootUtil()
+  if root.haveRoot()==true then
+  os.execute("su")
+end
     if Settings.canDrawOverlays(activity) then else intent=Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION");
       intent.setData(Uri.parse("package:" .. this.getPackageName())); this.startActivity(intent);
     end
@@ -1638,4 +1543,3 @@ spamchat.TrackDrawable.setColorFilter(PorterDuffColorFilter(0xFFD7FFF1,PorterDuf
     end
   end
 end
-
