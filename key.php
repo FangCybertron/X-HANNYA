@@ -1,1 +1,1 @@
-【S】stayhalal【S】
+【S】saynotocheat【S】
