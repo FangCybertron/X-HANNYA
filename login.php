@@ -1,1 +1,1 @@
-{"is_conect":true,"pass":"shit"}
+{"is_conect":true,"pass":"nofeedbacknoupdate"}
