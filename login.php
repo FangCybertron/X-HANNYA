@@ -1,1 +1,1 @@
-{"is_conect":true,"pass":"vip"}
+{"is_conect":true,"pass":"shit"}
